@@ -23,7 +23,6 @@ class ParticipantsController extends AppController
             'contain' => ['Users']
         ];
         $participants = $this->paginate($this->Participants);
-
         $this->set(compact('participants'));
     }
 

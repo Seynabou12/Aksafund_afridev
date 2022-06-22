@@ -86,8 +86,6 @@ class AppController extends app
         else {
             return false;
         }
-
-
     }
     protected function token($taille)
     {
@@ -102,8 +100,8 @@ class AppController extends app
         //Test2: taille limite
             //if ($maxsize !== FALSE AND $index['size'] > $maxsize) return FALSE;
         //Test3: extension
-            $ext = substr(strrchr($index['name'],'.'),1);
-            if ($extensions !== FALSE AND !in_array($ext,$extensions)) return FALSE;
+            // $ext = substr(strrchr($index['name'],'.'),1);
+            // if ($extensions !== FALSE AND !in_array($ext,$extensions)) return FALSE;
         //Déplacement
         return move_uploaded_file($index['tmp_name'],$destination);
     }

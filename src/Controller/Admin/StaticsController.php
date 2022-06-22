@@ -98,6 +98,7 @@ class StaticsController extends AppController
                     ]
 
                 ],
+            
                 /*[
                     "name" => "Les entreprises",
                     "fa" => "fa-building",
@@ -165,6 +166,26 @@ class StaticsController extends AppController
                     ]
 
                 ],
+                    // Les themes
+                    [
+                        "name" => "Les Thémes",
+                        "fa" => "fa-th",
+                        "header" => "Gestion des Thémes",
+                        "refs" => ['themes'],
+                        "items" => [
+                            [
+                                "name" => "Les thémes",
+                                "controller" => "Themes",
+                                "action" => "index"
+                            ],
+                            [
+                                "name" => "Ajouter un theme",
+                                "controller" => "Themes",
+                                "action" => "add"
+                            ]
+                        ]
+    
+                    ],
                 // [
                 //     "name" => "Les feed-Backs",
                 //     "fa" => "fa-envelope-open-text",
@@ -189,7 +210,8 @@ class StaticsController extends AppController
                 //     ]
 
                 // ]
-            ]
+                ],
+
         ];
 
         

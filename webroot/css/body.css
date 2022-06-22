@@ -1,0 +1,221 @@
+/* 
+couleurs 
+bleu: #006bb7
+bleu foncé: #005692
+jaune: #f39c12
+*/
+
+.section{
+    padding: 20px 15px 60px 15px;
+    box-shadow: 0 0px 1px 0px #ccc;
+    margin-top: 1px !important;
+}
+.section-title{
+    font-size: 36px;
+    font-weight: 500;
+    padding: 25px;
+}
+.section-subtitle{
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: -10px;
+}
+.section-title-icon{
+    height:100px;
+    width:100px;
+    object-fit: contain;
+}
+.demi-cercle-droit{
+    border-right: 2px solid #ccc;
+    border-radius: 50%;
+    height: 300px;
+    width: 300px;
+}
+.demi-cercle-item{
+    margin-top: 38px;
+    line-height: 45px;
+}
+.demi-cercle-item-texte{
+    text-align: right;
+    font-weight: 700;
+}
+.demi-cercle-item-icon-container{
+    text-align: right;
+    z-index: 10;
+}
+.demi-cercle-item-icon{
+    border-radius: 50%;
+    border: 1px solid #fafafa;
+    background-color: #f39c12;
+    text-align: center;
+    color: #006bb7;
+    width: 50px;
+    height:50px;
+    line-height: 45px !important;
+    padding: 10px;
+}
+.section-body-texte{
+    padding: 0 50px !important;
+    padding-top: 75px !important;
+}
+.article-thumbnail{
+    height: 150px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 4px 4px 0 0;
+}
+.article-card-body{
+    padding: 0px !important;
+}
+.article-card-title{
+    padding: 3px 5px;
+    margin: 0 !important;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.article-card-texte{
+    padding: 3px 5px;
+    margin: 0 !important;
+    font-size: 11px !important;
+}
+.article-card-footer{
+    padding: 3px 15px !important;
+    margin: 0 !important;
+    font-size: 12px;
+}
+.section-button-icon,.section-button-text{
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.team-thumbnail{
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 4px 4px 0 0;
+}
+.partenaire-thumbnail{
+    height: 100px;
+    width: 100%;
+    object-fit: contain;
+    border-radius: 4px 4px 0 0;
+}
+.partenaire-card-body{
+    border-radius: 0 0 3px 3px;
+}
+.slick-prev1, .slick-next1 {
+    top: -30px !important;
+    background-color: #ccc !important;
+    border-radius: 50%;
+}
+.slick-next1 {
+    right: 0px !important;
+}
+.slick-prev1 {
+    right: 30px !important;
+    left: unset !important
+}
+.slick-prev2, .slick-next2 {
+    top: -20px !important;
+    background-color: #ccc !important;
+    border-radius: 50%;
+}
+.slick-next2 {
+    right: 0px !important;
+}
+.slick-prev2 {
+    right: 30px !important;
+    left: unset !important
+}
+.slick-prev3, .slick-next3 {
+    top: 200px !important;
+    background-color: #ccc !important;
+    border-radius: 50%;
+}
+.slick-next3 {
+    right: calc(50% + 0px) !important;
+}
+.slick-prev3 {
+    right: calc(50% + 30px) !important;
+    left: unset !important
+}
+.slick-slider1{
+    height: 365px;
+}
+.slide2-container{
+    box-shadow: 0 0 5px -2px #333;
+    margin: 18px;
+    border-radius: 5px;
+    background-color: #eee;
+}
+
+.slider1-item{
+    background-color: #ccc;
+    box-shadow: 0 0 5px -2px #333;
+}
+.slider1-item{
+    object-fit: cover;
+    height: 325px;
+    width: 100%;
+    /* margin: auto; */
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+.slider2-item{
+    object-fit: contain;
+    height: 110px;
+    width: 110px;
+    margin: auto;
+    /*border-radius: 50%;*/
+}
+.slider3-item{
+    object-fit: cover;
+    height: 225px;
+    width: 100%;
+    margin: auto;
+}
+.slide1-text,.slide3-text{
+    font-weight: 700;
+    font-size: 18px;
+    padding: 5px 10px;
+    color: #333;
+}
+.slide1-text{
+    background-color: #fff;
+    position: relative;
+    border-radius: 5px;
+    min-height: 70px;
+    box-shadow: 0 0 5px -1px #333;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: -50px;
+    margin-bottom: 10px;
+}
+.slide2-text{
+    font-weight: 600;
+    font-size: 15px;
+    padding: 5px 10px;
+    color: #777;
+}
+.slide3-text2{
+    font-size: 14px;
+    color: #555;
+}
+.mags-container,.startups-container{
+    min-height:225px; 
+    padding: 0 30px !important;
+}
+.events-container{
+    height: 450px; 
+    padding: 0 30px !important;
+}
+
+@media screen and (max-width: 766px)
+{
+   .text-sm-center {
+       text-align: center !important;
+   }
+
+}

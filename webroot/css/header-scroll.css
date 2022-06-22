@@ -1,0 +1,4 @@
+.navbar,.logo-ds {
+    transition: ease .9s;
+    -webkit-transition: ease .9s;
+}

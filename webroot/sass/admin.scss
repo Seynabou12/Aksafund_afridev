@@ -1,0 +1,174 @@
+    $secondaire: #09498e !important;
+    $primary: #003d80 !important;
+    $grey: #ecececec !important;
+    $gris: #6c757d !important;
+    .btn-orange {
+        background-color: #f37936 !important;
+        // border-radius: 10px !important;
+    }
+
+    .btn-titre {
+        margin: 0 !important;
+    }
+
+    td>a {
+        margin: 0 .5rem !important;
+        display: block;
+        color: #3a3b45;
+        text-decoration: none;
+        border-radius: .35rem;
+        white-space: nowrap;
+    }
+
+    @mixin bg($val) {
+        background: $val;
+    }
+
+    @mixin fontsize($val) {
+        font-size: $val;
+    }
+
+    body {
+        background-image: url(../img/bg.png);
+        width: 100%;
+        background-size: cover;
+        font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        font-size: 1rem;
+        font-weight: 400;
+    }
+
+    // --------- Connexionlogin -----------------
+    .cnx {
+        background-image: url(../img/bg.png);
+        width: 100%;
+        background-size: cover;
+        margin: 30px 0;
+        padding: 90px 30px;
+        border-radius: 10px;
+        box-shadow: 0 -2px 18px 0px #d8d4d4;
+        >form {
+            padding-top: 30px;
+        }
+        &_contenu {
+            &_right {
+                border-left: 1px solid $grey;
+            }
+        }
+    }
+
+    .forgetpwd {
+        text-align: right!important;
+        float: right;
+        font-size: 14px;
+        margin: 10px 0;
+    }
+
+    //--------------------------------------------
+    // Menu
+    .menu-horizontal {
+        background: #fff !important;
+        box-shadow: 0 0 13px -1px #6c757d !important;
+    }
+
+    .panel-group {
+        margin-top: 10px;
+    }
+
+    .panel-heading {
+        >h4 {
+            font-size: .9rem;
+            padding: 15px 10px;
+            border-radius: 5px;
+            >a {
+                color: rgba(255, 255, 255, 0.8) !important;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                >i {
+                    margin-right: 5px;
+                }
+            }
+        }
+        >h4.active {
+            background: #122d6b !important;
+        }
+        >.panel-title {
+            >i.icone {
+                color: #fff;
+                float: right;
+                margin-top: 5px;
+                font-size: 10px;
+            }
+        }
+    }
+
+    .panel-body {
+        >table {
+            background: white;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+    }
+
+    // end Menu
+    .contenu {
+        background-image: url(../img/bg.png) !important;
+        width: 100%;
+        background-size: cover;
+        // @include bg($grey);
+        height: calc(100vh - (49px)) !important;
+        overflow-y: auto;
+        &_menu {
+            @include bg($primary);
+            height: calc( 100vh - (59px)) !important;
+            padding-top: 10px;
+        }
+    }
+
+    .btn-submit {
+        margin: 5px 0 !important;
+    }
+
+    .btn-sm1 {
+        padding: .4rem 1.2rem !important;
+    }
+
+    .page {
+        padding: 30px 50px;
+        &_header {
+            &_title {
+                @include fontsize(20px);
+                font-weight: 400;
+                color: $gris;
+            }
+        }
+        &_body {
+            padding: 21px 0 !important;
+            border-radius: 2px;
+        }
+    }
+
+    // Extra small devices (portrait phones, less than 576px)
+    @media (max-width: 575.98px) {}
+
+    // Small devices (landscape phones, less than 768px)
+    @media (max-width: 767.98px) {
+        .panel-heading {
+            >h4 {
+                font-size: 12px !important;
+                margin-left: -12px;
+            }
+        }
+    }
+
+    // Medium devices (tablets, less than 992px)
+    @media (max-width: 991.98px) {
+        .panel-heading {
+            >h4 {
+                font-size: 12px !important;
+            }
+        }
+    }
+
+    // Large devices (desktops, less than 1200px)
+    @media (max-width: 1199.98px) {}

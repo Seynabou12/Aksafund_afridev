@@ -1,0 +1,14 @@
+.actions, .table td.actions {
+    text-align: right !important;
+    width: 135px !important;
+}
+
+#dataTable_filter {
+    float: right !important;
+}
+#dataTable_paginate {
+    float: right !important;
+}
+.pagination .page-item.active .page-link {
+    background-color: #f37936 !important;
+}

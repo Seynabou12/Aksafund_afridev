@@ -1,0 +1,37 @@
+.color1{color:#006bb7 !important;}
+.color2{color:#005692 !important;}
+.color3{color:#f39c12 !important;}
+
+.bg1{background-color:#006bb7 !important;}
+.bg2{background-color:#005692 !important;}
+.bg3{background-color:#f39c12 !important;}
+
+.mr--50{margin-right: -50px !important;}
+.mr--80{margin-right: -80px !important;}
+/* Cliquer pour faire disparaitre le message flash */
+.hidden {
+    display: none !important;
+}
+ul {
+    list-style: none;
+}
+
+ul li {
+    padding: 0px 0;
+}
+
+ul li i {
+    color: #006BB7;
+}
+.radius {
+    border-radius: 8px;
+}
+.td_nowrap{
+    white-space: nowrap;
+    max-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+td.actions{
+    width: 131px;
+}

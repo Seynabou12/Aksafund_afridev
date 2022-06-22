@@ -1,0 +1,22 @@
+/* 
+couleurs 
+bleu: #006bb7
+bleu foncé: #005692
+jaune: #f39c12
+*/
+
+.nav-link{
+    color: #006bb7 !important;
+    font-weight: 500;
+}
+
+.header-rs{
+    color: #f39c12;
+}
+
+.header-titre1{
+    text-align: center;
+    font-size: 34px;
+    font-weight: 600;
+    padding: 50px 0;
+}

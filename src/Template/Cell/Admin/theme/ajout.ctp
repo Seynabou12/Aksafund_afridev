@@ -25,7 +25,7 @@
                     <div class="card-body row">
                         <div class="col-md-12">
                             <?php
-                                echo $this->Form->control('nom',['class'=>'form-control','value'=>$theme->nomTheme,'label'=>"Nom du Theme", 'placeholder'=>'Saisir le nom du théme']);
+                                echo $this->Form->control('nomTheme',['class'=>'form-control','value'=>$theme->nomTheme,'label'=>"Nom du Theme", 'placeholder'=>'Saisir le nom du théme']);
                             ?>
                         </div>
                        
@@ -47,7 +47,6 @@
         });
         $(document).ready(function() {
             var description = $('#description').val();
-         
             $('#description').change(function() {
                 description = $(this).val();
             });

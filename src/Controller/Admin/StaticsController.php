@@ -170,7 +170,7 @@ class StaticsController extends AppController
                     [
                         "name" => "Les Thémes",
                         "fa" => "fa-th",
-                        "header" => "Gestion des Thémes",
+                        "header" => "Gestion des thémes",
                         "refs" => ['themes'],
                         "items" => [
                             [

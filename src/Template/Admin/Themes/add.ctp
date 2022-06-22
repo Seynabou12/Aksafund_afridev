@@ -7,7 +7,6 @@ $this->assign('title', 'Ajout - Nouveau Theme');
     $this->assign('view', 'action');
     $this->assign('action', $this->Url->build(['action' => 'add']));
     $this->extend('/Cell/Admin/theme/ajout'); ?>
-?>
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
@@ -19,7 +18,7 @@ $this->assign('title', 'Ajout - Nouveau Theme');
     <fieldset>
         <legend><?= __('Add Theme') ?></legend>
         <?php
-            echo $this->Form->control('nom');
+            echo $this->Form->control('nomTheme');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

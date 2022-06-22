@@ -8,7 +8,7 @@ use Cake\Validation\Validator;
  * Themes Model
  * @mixin \Cake\ORM\Behavior\TimestampBehavior
  */
-class ThemeTable extends Table
+class ThemesTable extends Table
 {
     /**
      * Initialize method
@@ -25,7 +25,6 @@ class ThemeTable extends Table
         $this->setPrimaryKey('idTheme');
 
         $this->addBehavior('Timestamp');
-
     }
 
     /**
@@ -37,17 +36,16 @@ class ThemeTable extends Table
     public function validationDefault(Validator $validator)
     {
         $validator
-            ->integer('id')
-            ->allowEmptyString('id', 'create');
+            ->integer('idTheme')
+            ->allowEmptyString('idTheme', 'create');
 
         $validator
             ->scalar('nomTheme')
-            ->maxLength('nomTheme', 105)
+            ->maxLength('nomTheme', 100)
             ->allowEmptyString('nomTheme');
 
         return $validator;
     }
-
 
 }
  

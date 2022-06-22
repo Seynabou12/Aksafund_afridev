@@ -18,12 +18,16 @@
         <tbody>
             <?php foreach ($themes as $theme): ?>
             <tr>
+                <td><?= h($theme->idTheme) ?></td>
                 <td><?= h($theme->nomTheme) ?></td>
                 
                 <td class="actions">
                     <a href="<?= $this->Url->Build(['controller' => 'Themes', 'action' => 'view', $theme->idTheme]) ?>" class="btn btn-sm btn-sm1 btn-primary">
-                        <i class="fas fa-edit"></i>
+                        <i class="fas fa-eye"></i>
                     </a>
+                    <a href="<?= $this->Url->Build(['controller'=> 'Themes', 'action'=> 'edit', $theme->idTheme]) ?>" class="btn btn-sm btn-sm1 btn-primary">
+                    <i class="fas fa-edit"></i>
+                </a>
                 </td>
             </tr>
             <?php endforeach; ?>

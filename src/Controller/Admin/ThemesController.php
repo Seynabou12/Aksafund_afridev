@@ -8,7 +8,7 @@ use App\Controller\Admin\AppController;
  *
  * @property \App\Model\Table\ThemeTable $Types
  *
- */
+ */ 
 class ThemesController extends AppController
 {
     /**
@@ -31,7 +31,6 @@ class ThemesController extends AppController
      */
     public function view($id = null)
     {
-    
         $theme = $this->Themes->get($id, [
             'contain' => []
         ]);
@@ -47,6 +46,7 @@ class ThemesController extends AppController
     {
         $theme = $this->Themes->newEntity();
         if ($this->request->is('post')) {
+            // dd($this->request->getData());
             $theme  = $this->Themes->patchEntity($theme, $this->request->getData());
             if ($this->Themes->save($theme)) {
                 $this->Flash->success(__('Ce theme a été bien enregistré.'));
@@ -58,7 +58,4 @@ class ThemesController extends AppController
         $this->set(compact('theme'));
     }
 
-    
-
-   
 }

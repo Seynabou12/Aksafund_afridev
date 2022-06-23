@@ -28,6 +28,7 @@
                     <a href="<?= $this->Url->Build(['controller'=> 'Themes', 'action'=> 'edit', $theme->idTheme]) ?>" class="btn btn-sm btn-sm1 btn-primary">
                         <i class="fas fa-edit"></i>
                     </a>
+                    <?= $this->Form->postLink(__('<i class="fas fa-trash-alt "></i>'), ['controller' => 'Themes', 'action' => 'delete', $theme->idTheme], ['escape' => false, 'class' => 'btn btn-sm btn-sm1 btn-danger', 'confirm' => __('Voulez vous supprimer type n° :  {0}?', $theme->idTheme)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>

@@ -93,4 +93,23 @@ class ThemesController extends AppController
         }
         $this->set(compact('theme'));
     }
+
+    /**
+     * Delete method
+     *
+     * @param string|null $id Themes idTheme.
+     * @return \Cake\Http\Response|null Redirects to index.
+     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
+     */
+    public function delete($id = null)
+    {
+        $this->request->allowMethod(['post', 'delete']);
+        $theme = $this->Themes->get($id);
+        if ($this->Themes->delete($theme)) {
+            $this->Flash->success(__('Le theme a été supprimer avec succés.'));
+        } else {
+            $this->Flash->error(__('Votre n\'a pas été supprimer. Veuillez reprendre SVP.'));
+        }
+        return $this->redirect(['action' => 'index']);
+    }
 }

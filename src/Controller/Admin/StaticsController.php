@@ -186,6 +186,7 @@ class StaticsController extends AppController
                         ]
     
                     ],
+                    
                 // [
                 //     "name" => "Les feed-Backs",
                 //     "fa" => "fa-envelope-open-text",

@@ -4,7 +4,7 @@
  * @var \App\Model\Entity\Typecategory[]|\Cake\Collection\CollectionInterface $typecategorys
  */
 $this->assign('title', 'Liste des themes');
-$this->extend('/Cell/Admin/type/liste');
+$this->extend('/Cell/Admin/theme/liste');
 ?>
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">

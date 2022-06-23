@@ -10,24 +10,24 @@
 <div class="col-md-12 page_body">
     <table id="datatable" class="table table-striped table-bordered dt-responsive" width="100%">
         <thead>
+       
             <tr>
-                <th > Nom du théme</th>
+                <th> Nom du théme</th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
         <tbody>
             <?php foreach ($themes as $theme): ?>
             <tr>
-                <td><?= h($theme->idTheme) ?></td>
-                <td><?= h($theme->nomTheme) ?></td>
                 
+                <td><?= h($theme->nomTheme) ?></td>
                 <td class="actions">
                     <a href="<?= $this->Url->Build(['controller' => 'Themes', 'action' => 'view', $theme->idTheme]) ?>" class="btn btn-sm btn-sm1 btn-primary">
                         <i class="fas fa-eye"></i>
                     </a>
                     <a href="<?= $this->Url->Build(['controller'=> 'Themes', 'action'=> 'edit', $theme->idTheme]) ?>" class="btn btn-sm btn-sm1 btn-primary">
-                    <i class="fas fa-edit"></i>
-                </a>
+                        <i class="fas fa-edit"></i>
+                    </a>
                 </td>
             </tr>
             <?php endforeach; ?>

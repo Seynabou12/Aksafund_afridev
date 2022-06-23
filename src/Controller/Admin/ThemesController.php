@@ -11,6 +11,16 @@ use App\Controller\Admin\AppController;
  */ 
 class ThemesController extends AppController
 {
+    // /**
+    //  * Index method
+    //  *
+    //  * @return \Cake\Http\Response|void
+    //  */
+    // public function index()
+    // {
+    //     $themes = $this->Themes->find('all');
+    //     $this->set(compact('themes'));
+    // }
     /**
      * Index method
      *
@@ -18,6 +28,7 @@ class ThemesController extends AppController
      */
     public function index()
     {
+        //  $themes = $this->paginate($this->Themes);
         $themes = $this->Themes->find('all');
         $this->set(compact('themes'));
     }
@@ -25,7 +36,7 @@ class ThemesController extends AppController
     /**
      * View method
      *
-     * @param string|null $id Theme id.
+     * @param string|null $id Theme idTheme.
      * @return \Cake\Http\Response|void
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
@@ -45,17 +56,41 @@ class ThemesController extends AppController
     public function add()
     {
         $theme = $this->Themes->newEntity();
-        if ($this->request->is('post')) {
+        if ($this->request->is('post')) 
+        {
             // dd($this->request->getData());
             $theme  = $this->Themes->patchEntity($theme, $this->request->getData());
-            if ($this->Themes->save($theme)) {
+            if ($this->Themes->save($theme)) 
+            {
                 $this->Flash->success(__('Ce theme a été bien enregistré.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('Ce théme n\'a pas été enregistrer. Veiullez Reprendre SVP '));
+            $this->Flash->error(__('Ce théme n\'a pas été enregistrer. Veuillez Reprendre SVP '));
         }
         $this->set(compact('theme'));
     }
 
+    /**
+     * Edit method
+     *
+     * @param string|null $id Theme idTheme.
+     * @return \Cake\Http\Response|null Redirects on successful edit, renders view otherwise.
+     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
+     */
+    public function edit($id = null)
+    {
+        $theme = $this->Themes->get($id);
+        if ($this->request->is(['patch', 'post', 'put'])) 
+        {
+            $theme = $this->Themes->patchEntity($theme, $this->request->getData());
+            if ($this->Themes->save($theme)) 
+            {
+                $this->Flash->success(__('Le théme a été enregistré avec succés.'));
+                return $this->redirect(['action' => 'index']);
+            }
+            $this->Flash->error(__('Le theme n\' a pas été enregistré. SVP, veuillez reprendre.'));
+        }
+        $this->set(compact('theme'));
+    }
 }

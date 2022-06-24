@@ -11,7 +11,7 @@ $this->extend('/Cell/Admin/section/liste');
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('New Section'), ['action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Themes'), ['controller' => 'Themes', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Theme'), ['controller' => 'Theme', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('New Theme'), ['controller' => 'Themes', 'action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="sections index large-9 medium-8 columns content">

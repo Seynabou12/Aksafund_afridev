@@ -227,6 +227,27 @@ class StaticsController extends AppController
     
                     ],
 
+                     // Les sliders de la plateforme
+                     [
+                        "name" => "Les Sliders",
+                        "fa" => "fa-th",
+                        "header" => "Gestion des Sliders",
+                        "refs" => ['sliders'],
+                        "items" => [
+                            [
+                                "name" => "Les sliders",
+                                "controller" => "Sliders",
+                                "action" => "index"
+                            ],
+                            [
+                                "name" => "Ajouter un slider",
+                                "controller" => "Sliders",
+                                "action" => "add"
+                            ]
+                        ]
+    
+                    ],
+
 
                     
                 // [

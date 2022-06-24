@@ -42,6 +42,7 @@
             <th scope="row"><?= __('Pays') ?></th>
             <td><?= h($parametre->pays) ?></td>
         </tr>
+       
         <tr>
             <th scope="row"><?= __('Id') ?></th>
             <td><?= $this->Number->format($parametre->id) ?></td>

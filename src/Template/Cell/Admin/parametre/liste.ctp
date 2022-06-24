@@ -18,6 +18,7 @@
                     <th > Code Postal</th>
                     <th > Ville</th>
                     <th > Pays</th>
+
                     <th scope="col" class="actions"><?= __('Actions') ?></th>
                 </tr>
             </thead>
@@ -31,6 +32,7 @@
                     <td><?= h($parametre->code_postal) ?></td>
                     <td><?= h($parametre->ville) ?></td>
                     <td><?= h($parametre->pays) ?></td>
+                   
                    
                     <td class="actions">
                         <a href="<?= $this->Url->Build([ 'action' => 'view', $parametre->id]) ?>" class="btn btn-sm btn-sm1 btn-primary">

@@ -28,6 +28,7 @@
                     <div class="card-body row">
                         <div class="col-md-12">
                         <?php
+                        
                             echo $this->Form->control('nomPlateforme',['class'=>'form-control','label'=>'Nom de la Plateforme','default'=>$parametre->nomPlateforme]);
                             echo $this->Form->control('email',['class'=>'form-control','label'=>'Email','default'=>$parametre->email]);
                             echo $this->Form->control('telephone',['class'=>'form-control','label'=>'telephone','default'=>$parametre->telephone]);

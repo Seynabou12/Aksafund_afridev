@@ -30,6 +30,5 @@ class Parametre extends Entity
         'code_postal'=>true,
         'ville'=>true,
         'pays'=>true
-
     ];
 }

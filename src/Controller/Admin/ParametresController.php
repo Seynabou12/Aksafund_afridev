@@ -49,6 +49,7 @@ class ParametresController extends AppController
         {
             // dd($this->request->getData());
             $parametre  = $this->Parametres->patchEntity($parametre, $this->request->getData());
+            
             if ($this->Parametres->save($parametre)) 
             {
                 $this->Flash->success(__('Ces parametres ont été bien enregistré.'));
@@ -71,7 +72,6 @@ class ParametresController extends AppController
         $parametre = $this->Parametres->get($id);
         if ($this->request->is(['patch', 'post', 'put'])) 
         {
-            
             $parametre = $this->Parametres->patchEntity($parametre, $this->request->getData());
             if ($this->Parametres->save($parametre)) 
             {

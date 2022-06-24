@@ -4,12 +4,12 @@ namespace App\Controller\Admin;
 use App\Controller\Admin\AppController;
 
 /**
- * Typecategorys Controller
+ * Parametres Controller
  *
- * @property \App\Model\Table\ThemesTable $Types
+ * @property \App\Model\Table\ParametresTable $Parametres
  *
  */ 
-class ThemesController extends AppController
+class ParametresController extends AppController
 {
     /**
      * Index method
@@ -18,23 +18,23 @@ class ThemesController extends AppController
      */
     public function index()
     {
-        $themes = $this->Themes->find('all');
-        $this->set(compact('themes'));
+        $parametres = $this->Parametres->find('all');
+        $this->set(compact('parametres'));
     }
 
     /**
      * View method
      *
-     * @param string|null $id Theme idTheme.
+     * @param string|null $id Parametre id.
      * @return \Cake\Http\Response|void
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
     public function view($id = null)
     {
-        $theme = $this->Themes->get($id, [
+        $parametre = $this->Parametres->get($id, [
             'contain' => []
         ]);
-        $this->set('theme', $theme);
+        $this->set('parametre', $parametre);
     }
 
     /**
@@ -44,60 +44,60 @@ class ThemesController extends AppController
      */
     public function add()
     {
-        $theme = $this->Themes->newEntity();
+        $parametre = $this->Parametres->newEntity();
         if ($this->request->is('post')) 
         {
             // dd($this->request->getData());
-            $theme  = $this->Themes->patchEntity($theme, $this->request->getData());
-            if ($this->Themes->save($theme)) 
+            $parametre  = $this->Parametres->patchEntity($parametre, $this->request->getData());
+            if ($this->Parametres->save($parametre)) 
             {
-                $this->Flash->success(__('Ce theme a été bien enregistré.'));
-
+                $this->Flash->success(__('Ces parametres ont été bien enregistré.'));
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('Ce théme n\'a pas été enregistrer. Veuillez Reprendre SVP '));
+            $this->Flash->error(__('Ces parametres n\'ont pas été enregistrer. Veuillez Reprendre SVP '));
         }
-        $this->set(compact('theme'));
+        $this->set(compact('parametre'));
     }
 
     /**
      * Edit method
      *
-     * @param string|null $id Theme idTheme.
+     * @param string|null $id Parametre id.
      * @return \Cake\Http\Response|null Redirects on successful edit, renders view otherwise.
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
     public function edit($id = null)
     {
-        $theme = $this->Themes->get($id);
+        $parametre = $this->Parametres->get($id);
         if ($this->request->is(['patch', 'post', 'put'])) 
         {
-            $theme = $this->Themes->patchEntity($theme, $this->request->getData());
-            if ($this->Themes->save($theme)) 
+            
+            $parametre = $this->Parametres->patchEntity($parametre, $this->request->getData());
+            if ($this->Parametres->save($parametre)) 
             {
-                $this->Flash->success(__('Le théme a été enregistré avec succés.'));
+                $this->Flash->success(__('Les parametres ont été enregistré avec succés.'));
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('Le theme n\' a pas été enregistré. SVP, veuillez reprendre.'));
+            $this->Flash->error(__('Les parametres n\' ont pas été enregistré. SVP, veuillez reprendre.'));
         }
-        $this->set(compact('theme'));
+        $this->set(compact('parametre'));
     }
 
     /**
      * Delete method
      *
-     * @param string|null $id Themes idTheme.
+     * @param string|null $id Parametres id.
      * @return \Cake\Http\Response|null Redirects to index.
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
     public function delete($id = null)
     {
         $this->request->allowMethod(['post', 'delete']);
-        $theme = $this->Themes->get($id);
-        if ($this->Themes->delete($theme)) {
-            $this->Flash->success(__('Le theme a été supprimer avec succés.'));
+        $parametre = $this->Parametres->get($id);
+        if ($this->Parametres->delete($parametre)) {
+            $this->Flash->success(__('Les parametres ont été supprimer avec succés.'));
         } else {
-            $this->Flash->error(__('Votre n\'a pas été supprimer. Veuillez reprendre SVP.'));
+            $this->Flash->error(__('Vos parametres n\'ont pas été supprimer. Veuillez reprendre SVP.'));
         }
         return $this->redirect(['action' => 'index']);
     }

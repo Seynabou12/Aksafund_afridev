@@ -164,7 +164,6 @@ class StaticsController extends AppController
                             "action" => "add"
                         ]
                     ]
-
                 ],
                     // Les themes
                     [
@@ -186,6 +185,49 @@ class StaticsController extends AppController
                         ]
     
                     ],
+                    // Les parametres généraux de la plateforme
+                    [
+                        "name" => "Les Parametres",
+                        "fa" => "fa-th",
+                        "header" => "Gestion des Parametres",
+                        "refs" => ['parametres'],
+                        "items" => [
+                            [
+                                "name" => "Les parametres",
+                                "controller" => "Parametres",
+                                "action" => "index"
+                            ],
+                            [
+                                "name" => "Ajouter un parametres",
+                                "controller" => "Parametres",
+                                "action" => "add"
+                            ]
+                        ]
+    
+                    ],
+
+                     // Les sections de la plateforme
+                     [
+                        "name" => "Les Sections",
+                        "fa" => "fa-th",
+                        "header" => "Gestion des Sections",
+                        "refs" => ['sections'],
+                        "items" => [
+                            [
+                                "name" => "Les sections",
+                                "controller" => "Sections",
+                                "action" => "index"
+                            ],
+                            [
+                                "name" => "Ajouter une section",
+                                "controller" => "Sections",
+                                "action" => "add"
+                            ]
+                        ]
+    
+                    ],
+
+
                     
                 // [
                 //     "name" => "Les feed-Backs",

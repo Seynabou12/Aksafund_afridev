@@ -25,6 +25,7 @@ $this->extend('/Cell/Admin/parametre/liste');
                 <th scope="col"><?= $this->Paginator->sort('code_postal') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('ville') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('pays') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('logo') ?></th>
               
                
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
@@ -41,6 +42,7 @@ $this->extend('/Cell/Admin/parametre/liste');
                 <td><?= h($parametre->code_postal) ?></td>
                 <td><?= h($parametre->ville) ?></td>
                 <td><?= h($parametre->pays) ?></td>
+                <td><?= h($parametre->logo) ?></td>
                
                 
                 <td class="actions">

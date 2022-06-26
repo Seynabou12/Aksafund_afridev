@@ -14,6 +14,7 @@ use Cake\ORM\Entity;
  * @property string|null $code_postal
  * @property string|null $ville
  * @property string|null $pays
+ * @property string|null $logo
  */
 class Parametre extends Entity
 {
@@ -29,6 +30,7 @@ class Parametre extends Entity
         'adresse'=>true,
         'code_postal'=>true,
         'ville'=>true,
-        'pays'=>true
+        'pays'=>true,
+        'logo'=>true
     ];
 }

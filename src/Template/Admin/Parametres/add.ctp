@@ -14,7 +14,7 @@ $this->assign('title', 'Ajout - Nouveau parametre');
     </ul>
 </nav>
 <div class="parametres form large-9 medium-8 columns content">
-    <?= $this->Form->create($parametre, ['type'=>'file']) ?>
+    <?= $this->Form->create($parametre,['type'=>'file']) ?>
     <fieldset>
         <legend><?= __('Add Parametre') ?></legend>
         <?php
@@ -25,7 +25,7 @@ $this->assign('title', 'Ajout - Nouveau parametre');
             echo $this->Form->control('code_postal');
             echo $this->Form->control('ville');
             echo $this->Form->control('pays');
-         
+            echo $this->Form->control('logo', ['type'=>'file']);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

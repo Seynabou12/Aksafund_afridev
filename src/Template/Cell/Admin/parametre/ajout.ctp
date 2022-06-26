@@ -36,6 +36,7 @@
                             echo $this->Form->control('code_postal',['class'=>'form-control','label'=>'code_postal','default'=>$parametre->code_postal]);
                             echo $this->Form->control('ville',['class'=>'form-control','label'=>'ville','default'=>$parametre->ville]);
                             echo $this->Form->control('pays',['class'=>'form-control','label'=>'pays','default'=>$parametre->pays]);
+                            echo $this->Form->control('logo',['class'=>'form-control','label'=>'logo','type'=>'file','default'=>$parametre->logo]);
                         ?>
                         </div>
                     </div>

@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Controller\Admin;
 
 use App\Controller\Admin\AppController;
@@ -8,7 +9,7 @@ use App\Controller\Admin\AppController;
  *
  * @property \App\Model\Table\ParametresTable $Parametres
  *
- */ 
+ */
 class ParametresController extends AppController
 {
     /**
@@ -45,18 +46,28 @@ class ParametresController extends AppController
     public function add()
     {
         $parametre = $this->Parametres->newEntity();
-        if ($this->request->is('post')) 
-        {
-            // dd($this->request->getData());
-            $parametre  = $this->Parametres->patchEntity($parametre, $this->request->getData());
-            
-            if ($this->Parametres->save($parametre)) 
-            {
-                $this->Flash->success(__('Ces parametres ont été bien enregistré.'));
-                return $this->redirect(['action' => 'index']);
+       
+        if ($this->request->is('post')) {
+
+            if (!empty($this->request->data['logo'])) {
+                $file = $this->request->getData('logo');
+
+                $ext = substr(strtolower(strrchr($file['name'], '.')), 1);
+                $arr_ext = array('jpg', 'jpeg', 'gif', 'png');
+
+                $url = $this->savePhoto($file, 'parametres');
+                if ($url !== false) {
+                    $this->request->data['logo'] = $url;
+                    $parametre  = $this->Parametres->patchEntity($parametre, $this->request->getData());
+                    if ($this->Parametres->save($parametre)) {
+                        $this->Flash->success(__('Ces parametres ont été bien enregistré.'));
+                        return $this->redirect(['action' => 'index']);
+                    }
+                }
             }
             $this->Flash->error(__('Ces parametres n\'ont pas été enregistrer. Veuillez Reprendre SVP '));
         }
+
         $this->set(compact('parametre'));
     }
 
@@ -70,14 +81,27 @@ class ParametresController extends AppController
     public function edit($id = null)
     {
         $parametre = $this->Parametres->get($id);
-        if ($this->request->is(['patch', 'post', 'put'])) 
-        {
-            $parametre = $this->Parametres->patchEntity($parametre, $this->request->getData());
-            if ($this->Parametres->save($parametre)) 
+        if ($this->request->is(['patch', 'post', 'put'])) {
+            if (!empty($this->request->data['logo'])) 
             {
-                $this->Flash->success(__('Les parametres ont été enregistré avec succés.'));
-                return $this->redirect(['action' => 'index']);
+                $file = $this->request->getData('logo');
+
+                $ext = substr(strtolower(strrchr($file['name'], '.')), 1);
+                $arr_ext = array('jpg', 'jpeg', 'gif', 'png');
+
+                $url = $this->savePhoto($file, 'parametres');
+                if ($url !== false) 
+                {
+                    $this->request->data['logo'] = $url;
+                    $parametre = $this->Parametres->patchEntity($parametre, $this->request->getData());
+                    if ($this->Parametres->save($parametre)) 
+                    {
+                        $this->Flash->success(__('Les parametres ont été enregistré avec succés.'));
+                        return $this->redirect(['action' => 'index']);
+                    } 
+                }
             }
+           
             $this->Flash->error(__('Les parametres n\' ont pas été enregistré. SVP, veuillez reprendre.'));
         }
         $this->set(compact('parametre'));

@@ -24,6 +24,7 @@ class ParametresTable extends Table
         $this->setTable('parametres_generaux');
         $this->setDisplayField('nomPlateforme');
         $this->setPrimaryKey('id');
+        
     }
 
     /**
@@ -72,7 +73,11 @@ class ParametresTable extends Table
             ->maxLength('pays', 255)
             ->allowEmptyString('pays');
         
-      
+        $validator
+            ->scalar('logo')
+            ->maxLength('logo', 255)
+            ->allowEmptyString('logo');
+        
 
         return $validator;
     }

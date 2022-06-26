@@ -12,8 +12,11 @@ $this->assign('title', 'Ajout - Nouvelle section');
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('List Sections'), ['action' => 'index']) ?></li>
+        
         <li><?= $this->Html->link(__('List Themes'), ['controller' => 'Themes', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Theme'), ['controller' => 'Themes', 'action' => 'add']) ?></li>
+
+       
     </ul>
 </nav>
 <div class="sections form large-9 medium-8 columns content">
@@ -24,6 +27,7 @@ $this->assign('title', 'Ajout - Nouvelle section');
             echo $this->Form->control('nom');
             echo $this->Form->control('texte');
             echo $this->Form->control('theme_id', ['options' => $themes]);
+          
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

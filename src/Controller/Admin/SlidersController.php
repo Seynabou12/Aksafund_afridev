@@ -52,11 +52,22 @@ class SlidersController extends AppController
     {
         $slider = $this->Sliders->newEntity();
         if ($this->request->is('post')) {
-            $slider = $this->Sliders->patchEntity($slider, $this->request->getData());
-            if ($this->Sliders->save($slider)) {
-                $this->Flash->success(__('The slider has been saved.'));
+            if (!empty($this->request->data['images'])) {
+                $file = $this->request->getData('images');
 
-                return $this->redirect(['action' => 'index']);
+                $ext = substr(strtolower(strrchr($file['name'], '.')), 1);
+                $arr_ext = array('jpg', 'jpeg', 'gif', 'png');
+
+                $url = $this->savePhoto($file, 'sliders');
+                if ($url !== false) {
+                    $this->request->data['images'] = $url;
+                    $slider = $this->Sliders->patchEntity($slider, $this->request->getData());
+                    if ($this->Sliders->save($slider)) {
+                        $this->Flash->success(__('The slider has been saved.'));
+        
+                        return $this->redirect(['action' => 'index']);
+                    } 
+                }
             }
             $this->Flash->error(__('The slider could not be saved. Please, try again.'));
         }
@@ -76,11 +87,25 @@ class SlidersController extends AppController
             'contain' => []
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
-            $slider = $this->Sliders->patchEntity($slider, $this->request->getData());
-            if ($this->Sliders->save($slider)) {
-                $this->Flash->success(__('The slider has been saved.'));
 
-                return $this->redirect(['action' => 'index']);
+            if (!empty($this->request->data['images'])) 
+            {
+                $file = $this->request->getData('images');
+
+                $ext = substr(strtolower(strrchr($file['name'], '.')), 1);
+                $arr_ext = array('jpg', 'jpeg', 'gif', 'png');
+
+                $url = $this->savePhoto($file, 'sliders');
+                if ($url !== false) 
+                {
+                    $this->request->data['images'] = $url;
+                    $slider = $this->Sliders->patchEntity($slider, $this->request->getData());
+                    if ($this->Sliders->save($slider)) 
+                    {
+                        $this->Flash->success(__('The slider has been saved.'));
+                        return $this->redirect(['action' => 'index']);
+                    }
+                }
             }
             $this->Flash->error(__('The slider could not be saved. Please, try again.'));
         }

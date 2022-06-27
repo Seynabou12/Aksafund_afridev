@@ -15,13 +15,13 @@ $this->assign('title', 'Ajout - Nouvelle slider');
     </ul>
 </nav>
 <div class="sections form large-9 medium-8 columns content">
-    <?= $this->Form->create($slider) ?>
+    <?= $this->Form->create($slider ,['type'=>'file']) ?>
     <fieldset>
         <legend><?= __('Add Slider') ?></legend>
         <?php
             echo $this->Form->control('titre');
             echo $this->Form->control('description');
-            echo $this->Form->control('images');
+            echo $this->Form->control('images',['type'=>'file']);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

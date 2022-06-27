@@ -26,8 +26,9 @@
                         <div class="col-md-12">
                         <?php
                             echo $this->Form->control('titre',['class'=>'form-control','label'=>'Titre','default'=>$slider->titre]);
-                            echo $this->Form->control('description',['class'=>'form-control','label'=>'description','default'=>$slider->description]);
-                            echo $this->Form->control('images',['class'=>'form-control','label'=>'Images','default'=>$slider->images]);
+                            echo '<label>Description</label>';
+                            echo $this->Form->textarea('description',['class'=>'form-control','label'=>'description','default'=>$slider->description]);
+                            echo $this->Form->control('images',['class'=>'form-control','label'=>'Images','type'=>'file','default'=>$slider->images]);
                         ?>
                         </div>
                     </div>

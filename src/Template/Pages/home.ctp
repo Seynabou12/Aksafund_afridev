@@ -339,23 +339,25 @@ $cakeDescription = 'Aksafund: plateforme de collecte de fonds';
         </div> -->
     </div>
 </section>
-<section class="section3">
-    <div class="categories">
-        <div class="col-md-12 causes_titre text-center">
-            Nos Part<span class="text-orange">enaires</span>
-            <div class="title-icon">
-                <i class="fas fa-hand-holding-heart text-orange"></i>
+
+<!-- Section Nos Partenaires -->
+    <section class="section3">
+        <div class="categories">
+            <div class="col-md-12 causes_titre text-center">
+                Nos Part<span class="text-orange">enaires</span>
+                <div class="title-icon">
+                    <i class="fas fa-hand-holding-heart text-orange"></i>
+                </div>
+            </div>
+            <div class="partenaires d-flex justify-content-center mb-4">
+                <!-- <img src="img/afridev.png" alt="" width="100px" height="100%">
+                <img src="img/2stv.png" alt="" width="100px" height="100%">
+                <img src="img/ms.png" alt="" width="100px" height="100%">
+                <img src="img/paydunya.jpeg" alt="" width="100px" height="100%"> -->
             </div>
         </div>
-        <div class="partenaires d-flex justify-content-center mb-4">
-            <img src="img/afridev.png" alt="" width="100px" height="100%">
-            <img src="img/2stv.png" alt="" width="100px" height="100%">
-            <img src="img/ms.png" alt="" width="100px" height="100%">
-	   <img src="img/paydunya.jpeg" alt="" width="100px" height="100%">
+        <div class="causes">
+            <div class="col-md-12">
+            </div>
         </div>
-    </div>
-    <div class="causes">
-        <div class="col-md-12">
-        </div>
-    </div>
-</section>
+    </section>

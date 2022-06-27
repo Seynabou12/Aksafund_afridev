@@ -17,26 +17,22 @@
 <form class="col-md-12" method="post" enctype="multipart/form-data" action="<?= $this->fetch('action') ?>">
     <div class="row">
         <div class="col-md-12">
-            <div class="card shadow mb-4">
+            <div class="card shadow">
                 <a href="#collapseModif" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseModif">
-                    <h6 class="m-0 font-weight-bold text-primary">Remplir les Sections</h6>
+                    <h6 class="m-0 font-weight-bold text-primary">Remplir les informations de l'image</h6>
                 </a>
                 <div class="collapse show" id="collapseModif">
                     <div class="card-body row">
                         <div class="col-md-12">
-                        <?php
-                            echo $this->Form->control('nom',['class'=>'form-control','label'=>'Nom','default'=>$section->nom]);
-                            echo $this->Form->control('texte',['class'=>'form-control','label'=>'Texte','default'=>$section->texte]);
-                            echo '<label>Theme</label>';
-                            echo $this->Form->select('theme_id', $themes,['class' => 'form-control','label'=>'Theme','default'=>$section->theme_id]);
-                            echo '<label>Slider</label>';
-                            echo $this->Form->select('slider_id', $sliders,['class' => 'form d-flex','label'=>'Slider','default'=>$section->slider_id]);
-                        ?>
+                            <?php
+                                echo $this->Form->control('image',['class'=>'form-control','value'=>$image->image,'label'=>"Image", 'type'=>'file', 'placeholder'=>'Enregistrer une image']);
+                            ?>
                         </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="form-group mt-4 text-right">
-                            <button type="submit" class="btn btn-primary text-white"><i class="fas fa-plus-circle mr-2"></i>Enregistrer</button>
+                       
+                        <div class="col-md-12">
+                            <div class="form-group mt-4 text-right">
+                                <button type="submit" class="btn btn-primary text-white"><i class="fas fa-plus-circle mr-2"></i>Ajouter</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -47,11 +43,10 @@
 <?php $this->start('script_bottom'); ?>
     <script>
         CKEDITOR.replace('description', {
-            
+           
         });
         $(document).ready(function() {
             var description = $('#description').val();
-           
             $('#description').change(function() {
                 description = $(this).val();
             });

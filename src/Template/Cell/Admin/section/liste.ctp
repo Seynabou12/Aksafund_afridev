@@ -14,6 +14,7 @@
                     <th > Nom</th>
                     <th > Texte</th>
                     <th > Theme</th>
+                    <th > Sliders</th>
                     <th scope="col" class="actions"><?= __('Actions') ?></th>
                 </tr>
             </thead>
@@ -23,7 +24,7 @@
                     <td><?= h($section->nom) ?></td>
                     <td><?= h($section->texte) ?></td>
                     <td><?= $section->has('theme') ? $this->Html->link($section->theme->nomTheme, ['controller' => 'Themes', 'action' => 'view', $section->theme->idTheme]) : '' ?></td>
-                
+                    <td><?= $section->has('slider') ? $this->Html->link($section->slider->titre, ['controller' => 'Sliders', 'action' => 'view', $section->slider->id]) : '' ?></td>
                     <td class="actions">
                         <a href="<?= $this->Url->Build([ 'action' => 'view', $section->id]) ?>" class="btn btn-sm btn-sm1 btn-primary">
                             <i class="fas fa-eye"></i>

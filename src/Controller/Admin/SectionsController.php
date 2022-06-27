@@ -20,7 +20,7 @@ class SectionsController extends AppController
     public function index()
     {
         $this->paginate = [
-            'contain' => ['Themes']
+            'contain' => ['Themes', 'Sliders']
         ];
         $sections = $this->paginate($this->Sections);
 
@@ -37,7 +37,7 @@ class SectionsController extends AppController
     public function view($id = null)
     {
         $section = $this->Sections->get($id, [
-            'contain' => ['Themes']
+            'contain' => ['Themes', 'Sliders']
         ]);
 
         $this->set('section', $section);
@@ -61,7 +61,8 @@ class SectionsController extends AppController
             $this->Flash->error(__('The section could not be saved. Please, try again.'));
         }
         $themes = $this->Sections->Themes->find('list', ['limit' => 200]);
-        $this->set(compact('section', 'themes'));
+        $sliders = $this->Sections->Sliders->find('list', ['limit' => 200]);
+        $this->set(compact('section', 'themes', 'sliders'));
     }
 
     /**
@@ -86,7 +87,8 @@ class SectionsController extends AppController
             $this->Flash->error(__('The section could not be saved. Please, try again.'));
         }
         $themes = $this->Sections->Themes->find('list', ['limit' => 200]);
-        $this->set(compact('section', 'themes'));
+        $sliders = $this->Sections->Sliders->find('list', ['limit' => 200]);
+        $this->set(compact('section', 'themes', 'sliders'));
     }
 
     /**

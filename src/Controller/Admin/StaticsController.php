@@ -209,9 +209,9 @@ class StaticsController extends AppController
                      // Les sections de la plateforme
                      [
                         "name" => "Les Sections",
-                        "fa" => "fa-th",
+                        "fa" => "fa-industry",
                         "header" => "Gestion des Sections",
-                        "refs" => ['sections', 'themes'],
+                        "refs" => ['sections', 'themes', 'sliders'],
                         "items" => [
                             [
                                 "name" => "Les sections",
@@ -242,6 +242,27 @@ class StaticsController extends AppController
                             [
                                 "name" => "Ajouter un slider",
                                 "controller" => "Sliders",
+                                "action" => "add"
+                            ]
+                        ]
+    
+                    ],
+
+                    // gestion des Images
+                    [
+                        "name" => "Les Images",
+                        "fa" => "fa-industry",
+                        "header" => "Gestion des Images",
+                        "refs" => ['images'],
+                        "items" => [
+                            [
+                                "name" => "Les Images",
+                                "controller" => "Images",
+                                "action" => "index"
+                            ],
+                            [
+                                "name" => "Ajouter une image",
+                                "controller" => "Images",
                                 "action" => "add"
                             ]
                         ]

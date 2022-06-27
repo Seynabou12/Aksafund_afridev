@@ -10,8 +10,10 @@ use Cake\ORM\Entity;
  * @property string|null $nom
  * @property string|null $texte
  * @property int $theme_id
+ * @property int $slider_id
  *
  * @property \App\Model\Entity\Theme $theme
+ * @property \App\Model\Entity\Slider $slider
  */
 class Section extends Entity
 {
@@ -24,6 +26,8 @@ class Section extends Entity
         'nom' => true,
         'texte' => true,
         'theme_id' => true,
-        'theme' => true
+        'theme' => true,
+        'slider_id' => true,
+        'slider' => true
     ];
 }

@@ -12,7 +12,6 @@ use Cake\ORM\Entity;
 class Image extends Entity
 {
     protected $_accessible = [
-        'image'=>true,
-        'idSection'=>true
+        'image'=>true
     ];
 }

@@ -9,8 +9,9 @@ use Cake\Validation\Validator;
 /**
  * Sections Model
  *
- * @property \App\Model\Table\ThemesTable|\Cake\ORM\Association\BelongsTo $Themes
- 
+ * @property \App\Model\Table\ThemesTable|\Cake\ORM\Association\BelongsTo $Theme
+
+ * @property \App\Model\Table\SlidersTable|\Cake\ORM\Association\BelongsTo $Sliders
  */
 class SectionsTable extends Table
 {
@@ -30,6 +31,11 @@ class SectionsTable extends Table
 
         $this->belongsTo('Themes', [
             'foreignKey' => 'theme_id',
+            'joinType' => 'INNER'
+        ]);
+
+        $this->belongsTo('Sliders', [
+            'foreignKey' => 'slider_id',
             'joinType' => 'INNER'
         ]);
     }
@@ -68,7 +74,9 @@ class SectionsTable extends Table
     public function buildRules(RulesChecker $rules)
     {
         $rules->add($rules->existsIn(['theme_id'], 'Themes'));
-
+        $rules->add($rules->existsIn(['slider_id'], 'Sliders'));
         return $rules;
     }
+
+    
 }

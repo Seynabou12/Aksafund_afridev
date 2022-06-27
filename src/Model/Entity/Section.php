@@ -11,9 +11,11 @@ use Cake\ORM\Entity;
  * @property string|null $texte
  * @property int $theme_id
  * @property int $slider_id
+ * @property int $image_id
  *
  * @property \App\Model\Entity\Theme $theme
  * @property \App\Model\Entity\Slider $slider
+ * @property \App\Model\Entity\Image $image
  */
 class Section extends Entity
 {
@@ -28,6 +30,8 @@ class Section extends Entity
         'theme_id' => true,
         'theme' => true,
         'slider_id' => true,
-        'slider' => true
+        'slider' => true,
+        'image'=>true,
+        'image_id'=>true
     ];
 }

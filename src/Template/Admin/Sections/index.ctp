@@ -29,6 +29,7 @@ $this->extend('/Cell/Admin/section/liste');
                 <th scope="col"><?= $this->Paginator->sort('texte') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('theme_id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('slider_id') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('image_id') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>

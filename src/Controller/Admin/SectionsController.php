@@ -20,7 +20,7 @@ class SectionsController extends AppController
     public function index()
     {
         $this->paginate = [
-            'contain' => ['Themes', 'Sliders']
+            'contain' => ['Themes', 'Sliders', 'Images']
         ];
         $sections = $this->paginate($this->Sections);
 
@@ -37,7 +37,7 @@ class SectionsController extends AppController
     public function view($id = null)
     {
         $section = $this->Sections->get($id, [
-            'contain' => ['Themes', 'Sliders']
+            'contain' => ['Themes', 'Sliders', 'Images']
         ]);
 
         $this->set('section', $section);
@@ -62,7 +62,8 @@ class SectionsController extends AppController
         }
         $themes = $this->Sections->Themes->find('list', ['limit' => 200]);
         $sliders = $this->Sections->Sliders->find('list', ['limit' => 200]);
-        $this->set(compact('section', 'themes', 'sliders'));
+        $images = $this->Sections->Images->find('list', ['limit' => 200]);
+        $this->set(compact('section', 'themes', 'sliders', 'images'));
     }
 
     /**
@@ -88,7 +89,7 @@ class SectionsController extends AppController
         }
         $themes = $this->Sections->Themes->find('list', ['limit' => 200]);
         $sliders = $this->Sections->Sliders->find('list', ['limit' => 200]);
-        $this->set(compact('section', 'themes', 'sliders'));
+        $this->set(compact('section', 'themes', 'sliders','images'));
     }
 
     /**

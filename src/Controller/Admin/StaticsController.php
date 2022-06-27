@@ -211,7 +211,7 @@ class StaticsController extends AppController
                         "name" => "Les Sections",
                         "fa" => "fa-industry",
                         "header" => "Gestion des Sections",
-                        "refs" => ['sections', 'themes', 'sliders'],
+                        "refs" => ['sections', 'themes', 'sliders', 'images'],
                         "items" => [
                             [
                                 "name" => "Les sections",

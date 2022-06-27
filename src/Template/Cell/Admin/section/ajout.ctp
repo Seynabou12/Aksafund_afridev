@@ -30,7 +30,10 @@
                             echo '<label>Theme</label>';
                             echo $this->Form->select('theme_id', $themes,['class' => 'form-control','label'=>'Theme','default'=>$section->theme_id]);
                             echo '<label>Slider</label>';
-                            echo $this->Form->select('slider_id', $sliders,['class' => 'form d-flex','label'=>'Slider','default'=>$section->slider_id]);
+                            echo $this->Form->select('slider_id', $sliders,['class' => 'form d-flex','label'=>'Slider','type' => 'select','default'=>$section->slider_id]);
+                            echo '<label>Image</label>';
+                            echo $this->Form->select('image_id', $images, ['class' => 'form d-flex','type' => 'select','label'=>'Image',
+                            'multiple'=>'checkbox','default'=>$section->image_id]);
                         ?>
                         </div>
                     </div>

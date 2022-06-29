@@ -28,10 +28,6 @@ class Section extends Entity
         'nom' => true,
         'texte' => true,
         'theme_id' => true,
-        'theme' => true,
-        'slider_id' => true,
-        'slider' => true,
-        'image'=>true,
-        'image_id'=>true
+        'theme' => true
     ];
 }

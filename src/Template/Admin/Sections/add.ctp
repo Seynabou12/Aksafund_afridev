@@ -7,7 +7,7 @@ $this->assign('title', 'Ajout - Nouvelle section');
     $this->assign('view', 'action');
     $this->assign('action', $this->Url->build(['action' => 'add']));
     $this->extend('/Cell/Admin/section/ajout'); ?>
-?>
+
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
@@ -16,11 +16,6 @@ $this->assign('title', 'Ajout - Nouvelle section');
         <li><?= $this->Html->link(__('List Themes'), ['controller' => 'Themes', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Theme'), ['controller' => 'Themes', 'action' => 'add']) ?></li>
 
-        <li><?= $this->Html->link(__('List Sliders'), ['controller' => 'Sliders', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Slider'), ['controller' => 'Sliders', 'action' => 'add']) ?></li>
-
-        <li><?= $this->Html->link(__('List Images'), ['controller' => 'Images', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Image'), ['controller' => 'Images', 'action' => 'add']) ?></li>
 
     </ul>
 </nav>
@@ -32,8 +27,6 @@ $this->assign('title', 'Ajout - Nouvelle section');
             echo $this->Form->control('nom');
             echo $this->Form->control('texte');
             echo $this->Form->control('theme_id', ['options' => $themes]);
-            echo $this->Form->control('slider_id', ['options'=> $sliders]);
-            echo $this->Form->checkbox('image_id', ['options'=> $images]);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

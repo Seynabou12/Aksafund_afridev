@@ -14,8 +14,6 @@ $this->extend('/Cell/Admin/section/liste');
         <li><?= $this->Html->link(__('List Themes'), ['controller' => 'Themes', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Theme'), ['controller' => 'Themes', 'action' => 'add']) ?></li>
 
-        <li><?= $this->Html->link(__('List Sliders'), ['controller' => 'Sliders', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Slider'), ['controller' => 'Sliders', 'action' => 'add']) ?></li>
 
     </ul>
 </nav>
@@ -28,8 +26,6 @@ $this->extend('/Cell/Admin/section/liste');
                 <th scope="col"><?= $this->Paginator->sort('nom') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('texte') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('theme_id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('slider_id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('image_id') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>

@@ -20,7 +20,7 @@ class SlidersController extends AppController
     public function index()
     {
         $this->paginate = [
-            'contain' => []
+            'contain' => ['Sections']
         ];
         $sliders = $this->paginate($this->Sliders);
 
@@ -37,7 +37,7 @@ class SlidersController extends AppController
     public function view($id = null)
     {
         $slider = $this->Sliders->get($id, [
-            'contain' => []
+            'contain' => ['Sectons']
         ]);
 
         $this->set('slider', $slider);
@@ -71,7 +71,9 @@ class SlidersController extends AppController
             }
             $this->Flash->error(__('The slider could not be saved. Please, try again.'));
         }
-        $this->set(compact('slider'));
+
+        $sections = $this->Sliders->Sections->find('list', ['limit' => 200]);
+        $this->set(compact('slider', 'section'));
     }
 
     /**
@@ -109,7 +111,8 @@ class SlidersController extends AppController
             }
             $this->Flash->error(__('The slider could not be saved. Please, try again.'));
         }
-        $this->set(compact('slider'));
+        $sections = $this->Sliders->Sections->find('list', ['limit' => 200]);
+        $this->set(compact('slider', 'section'));
     }
 
     /**

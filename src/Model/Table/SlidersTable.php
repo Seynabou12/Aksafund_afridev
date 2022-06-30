@@ -8,6 +8,7 @@ use Cake\Validation\Validator;
 
 /**
  * Sliders Model 
+ *  @property \App\Model\Table\SectionsTable|\Cake\ORM\Association\BelongsTo $Section
  */
 class SlidersTable extends Table
 {
@@ -24,6 +25,11 @@ class SlidersTable extends Table
         $this->setTable('slider');
         $this->setDisplayField('titre');
         $this->setPrimaryKey('id');
+
+        $this->belongsTo('Sections', [
+            'foreignKey' => 'id_section',
+            'joinType' => 'INNER'
+        ]);
     }
 
     /**
@@ -57,4 +63,14 @@ class SlidersTable extends Table
         return $validator;
     }
 
+      /**
+     *
+     * @param \Cake\ORM\RulesChecker $rules The rules object to be modified.
+     * @return \Cake\ORM\RulesChecker
+     */
+    public function buildRules(RulesChecker $rules)
+    {
+        $rules->add($rules->existsIn(['id_section'], 'Sections'));
+        return $rules;
+    }
 }

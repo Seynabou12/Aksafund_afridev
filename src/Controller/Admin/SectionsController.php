@@ -11,7 +11,6 @@ use Cake\ORM\TableRegistry;
  * Sections Controller
  *
  * @property \App\Model\Table\SectionsTable $Sections
- * @property \App\Model\Table\SlidersTable $Sliders
  *
  * @method \App\Model\Entity\Section[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
  */
@@ -59,7 +58,6 @@ class SectionsController extends AppController
 
         if ($this->request->is('post')) {
 
-
             $section = $this->Sections->patchEntity($section, $this->request->getData());
             $sc = $this->Sections->save($section);
             if ($sc) {
@@ -79,7 +77,7 @@ class SectionsController extends AppController
                             "titre" => $value,
                             "description" => $this->request->getData('description-' . $a[1]),
                             "images" => $url,
-                            // 'id_section' => $sc->id
+                            'id_section' => $sc->id
                         ]);
                         $sliders->save($section);
                     } elseif ($key == "images") {
@@ -92,7 +90,7 @@ class SectionsController extends AppController
                             $image = $images->newEntity();
                             $section = $images->patchEntity($image, [
                                 "image" => $url,
-                                // 'id_section' => $sc->id
+                                'id_section' => $sc->id
                             ]);
                             $images->save($section);
                         }

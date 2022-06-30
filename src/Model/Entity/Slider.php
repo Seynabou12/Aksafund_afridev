@@ -12,8 +12,10 @@ use Cake\ORM\Entity;
  * @property string|null $titre
  * @property string|null $description
  * @property string|null $images
+ * @property int $section_id
  * 
  * @property \App\Model\Entity\Slider $section 
+ * @property \App\Model\Entity\Section $section
  */
 class Slider extends Entity
 {
@@ -21,6 +23,8 @@ class Slider extends Entity
         'titre'=>true,
         'description'=>true,
         'images'=>true,
+        'id_section'=>true,
+        'section'=>true
     ];
 }
 

@@ -18,8 +18,12 @@ class ImagesController extends AppController
      */
     public function index()
     {
-        $images = $this->Images->find('all');
+        $this->paginate = [
+            'contain' => ['Sections']
+        ];
+        $images = $this->paginate($this->Images);
         $this->set(compact('images'));
+       
     }
 
     /**
@@ -32,7 +36,7 @@ class ImagesController extends AppController
     public function view($id = null)
     {
         $image = $this->Images->get($id, [
-            'contain' => []
+            'contain' => ['Sections']
         ]);
         $this->set('image', $image);
     }
@@ -68,6 +72,8 @@ class ImagesController extends AppController
             
             $this->Flash->error(__('Cette image n\'a pas été enregistrer. Veuillez Reprendre SVP '));
         }
+
+        $sections = $this->Images->Sections->find('list', ['limit' => 200]);
         $this->set(compact('image'));
     }
 
@@ -103,6 +109,8 @@ class ImagesController extends AppController
             
             $this->Flash->error(__('L\'image n\' a pas été enregistré. SVP, veuillez reprendre.'));
         }
+
+        $sections = $this->Images->Sections->find('list', ['limit' => 200]);
         $this->set(compact('image'));
     }
 

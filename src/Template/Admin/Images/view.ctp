@@ -21,6 +21,10 @@
             <td><?= h($image->image) ?></td>
         </tr>
         <tr>
+            <th scope="row"><?= __('Section') ?></th>
+            <td><?= $slider->has('section') ? $this->Html->link($slider->section->nom, ['controller' => 'Sections', 'action' => 'view', $slider->section->id]) : '' ?></td>
+        </tr>
+        <tr>
             <th scope="row"><?= __('Id') ?></th>
             <td><?= $this->Number->format($image->id) ?></td>
         </tr>

@@ -10,6 +10,9 @@ $this->extend('/Cell/Admin/slider/liste');
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('New Slider'), ['action' => 'add']) ?></li>
+        
+        <li><?= $this->Html->link(__('List Sections'), ['controller' => 'Sections', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('New Section'), ['controller' => 'Sections', 'action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="sections index large-9 medium-8 columns content">
@@ -21,6 +24,7 @@ $this->extend('/Cell/Admin/slider/liste');
                 <th scope="col"><?= $this->Paginator->sort('titre') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('description') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('images') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('id_section') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>

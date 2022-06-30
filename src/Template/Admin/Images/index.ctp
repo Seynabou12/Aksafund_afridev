@@ -10,6 +10,10 @@ $this->extend('/Cell/Admin/image/liste');
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('New Image'), ['action' => 'add']) ?></li>
+
+        <li><?= $this->Html->link(__('List Sections'), ['controller' => 'Sections', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('New Section'), ['controller' => 'Sections', 'action' => 'add']) ?></li>
+
     </ul>
 </nav>
 <div class="images index large-9 medium-8 columns content">
@@ -19,6 +23,7 @@ $this->extend('/Cell/Admin/image/liste');
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('image') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('id_section') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
@@ -29,6 +34,9 @@ $this->extend('/Cell/Admin/image/liste');
                 <td><?= h($image->image) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $image->id]) ?>
+                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $image->id]) ?>
+                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $image->id], ['confirm' => __('Are you sure you want to delete # {0}?', $image->id)]) ?>
+               
                 </td>
             </tr>
             <?php endforeach; ?>

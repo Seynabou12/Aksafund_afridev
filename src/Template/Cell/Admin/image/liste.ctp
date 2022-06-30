@@ -11,6 +11,7 @@
         <thead>
             <tr>
                 <th> Image</th>
+                <th> Section</th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
@@ -18,6 +19,8 @@
             <?php foreach ($images as $image): ?>
             <tr>
                 <td><?= h($image->image) ?></td>
+                <td><?= $image->has('section') ? $this->Html->link($image->section->nom, ['controller' => 'Sections', 'action' => 'view', $image->section->id]) : '' ?></td>
+                    
                 <td class="actions">
                     <a href="<?= $this->Url->Build(['controller' => 'Images', 'action' => 'view', $image->id]) ?>" class="btn btn-sm btn-sm1 btn-primary">
                         <i class="fas fa-eye"></i>

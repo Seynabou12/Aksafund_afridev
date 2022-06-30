@@ -211,7 +211,7 @@ class StaticsController extends AppController
                         "name" => "Les Sections",
                         "fa" => "fa-industry",
                         "header" => "Gestion des Sections",
-                        "refs" => ['sections', 'themes', 'sliders', 'images'],
+                        "refs" => ['sections', 'themes'],
                         "items" => [
                             [
                                 "name" => "Les sections",
@@ -224,7 +224,6 @@ class StaticsController extends AppController
                                 "action" => "add"
                             ]
                         ]
-    
                     ],
 
                      // Les sliders de la plateforme
@@ -232,7 +231,7 @@ class StaticsController extends AppController
                         "name" => "Les Sliders",
                         "fa" => "fa-th",
                         "header" => "Gestion des Sliders",
-                        "refs" => ['sliders'],
+                        "refs" => ['sliders', 'sections'],
                         "items" => [
                             [
                                 "name" => "Les sliders",
@@ -253,7 +252,7 @@ class StaticsController extends AppController
                         "name" => "Les Images",
                         "fa" => "fa-industry",
                         "header" => "Gestion des Images",
-                        "refs" => ['images'],
+                        "refs" => ['images','sections'],
                         "items" => [
                             [
                                 "name" => "Les Images",

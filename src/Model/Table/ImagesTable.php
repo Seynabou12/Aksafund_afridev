@@ -2,11 +2,14 @@
 namespace App\Model\Table;
 
 use Cake\ORM\Table;
+use Cake\ORM\RulesChecker;
 use Cake\Validation\Validator;
 
 /**
  * Themes Model
  * @mixin \Cake\ORM\Behavior\TimestampBehavior
+ * 
+ *  @property \App\Model\Table\SectionsTable|\Cake\ORM\Association\BelongsTo $Section
  */
 class ImagesTable extends Table
 {
@@ -25,6 +28,11 @@ class ImagesTable extends Table
         $this->setPrimaryKey('id');
 
         $this->addBehavior('Timestamp');
+
+        $this->belongsTo('Sections', [
+            'foreignKey' => 'id_section',
+            'joinType' => 'INNER'
+        ]);
     }
 
     /**
@@ -47,5 +55,17 @@ class ImagesTable extends Table
         return $validator;
     }
 
+     /**
+     *
+     * @param \Cake\ORM\RulesChecker $rules The rules object to be modified.
+     * @return \Cake\ORM\RulesChecker
+     */
+    public function buildRules(RulesChecker $rules)
+    {
+        $rules->add($rules->existsIn(['id_section'], 'Sections'));
+        return $rules;
+    }
+
+    
 }
  

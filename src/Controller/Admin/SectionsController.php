@@ -121,11 +121,53 @@ class SectionsController extends AppController
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $section = $this->Sections->patchEntity($section, $this->request->getData());
-            if ($this->Sections->save($section)) {
+            $sc = $this->Sections->save($section);
+            if ($sc) {
+                foreach ($this->request->data() as $key => $value) {
+                    $a = explode('-', $key);
+                    //si l'index commence par titre
+                    if ($a[0] == 'titre') {
+                        $file = $this->request->getData('images-' . $a[1]);
+                        $ext = substr(strtolower(strrchr($file['name'], '.')), 1);
+
+                        $url = $this->savePhoto($file, 'sliders');
+                        
+                        //creation de la table
+                        $sliders = TableRegistry::get('Sliders');
+                        $slider = $sliders->newEntity();
+                        $section = $sliders->patchEntity($slider, [
+                            "titre" => $value,
+                            "description" => $this->request->getData('description-' . $a[1]),
+                            "images" => $url,
+                            'id_section' => $sc->id
+                        ]);
+                        $sliders->save($section);
+                    } elseif ($key == "images") {
+                        //si ce sont des images
+                        foreach ($value as $val) {
+                            $file = $val;
+                            $url = $this->savePhoto($file, 'sliders');
+
+                            $images = TableRegistry::get('Images');
+                            $image = $images->newEntity();
+                            $section = $images->patchEntity($image, [
+                                "image" => $url,
+                                'id_section' => $sc->id
+                            ]);
+                            $images->save($section);
+                        }
+                    }
+                }
+
                 $this->Flash->success(__('The section has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
             }
+            // if ($this->Sections->save($section)) {
+            //     $this->Flash->success(__('The section has been saved.'));
+
+            //     return $this->redirect(['action' => 'index']);
+            // }
             $this->Flash->error(__('The section could not be saved. Please, try again.'));
         }
         $themes = $this->Sections->Themes->find('list', ['limit' => 200]);

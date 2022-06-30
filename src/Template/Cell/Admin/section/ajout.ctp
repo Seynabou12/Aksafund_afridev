@@ -72,7 +72,7 @@ $this->start('script'); ?>
             `;
             let element = document.createElement('div');
             element.innerHTML = button;
-            divOption.append(element)
+            divOption.append(element);
             addSlider();
 
         } else if (choix.value == "option2") {
@@ -100,13 +100,14 @@ $this->start('script'); ?>
         html = `
             <label for="nom">Annuler</label>
             <div class="form-group ">
-                <div class="btn btn-danger text-white"  onclick="deleteSlider()"><i class="fas fa-plus-circle mr-2"></i></div>
+                <div class="btn btn-danger text-white"  onclick="removeSlider()" id="annuler"><i class="fas fa-plus-circle mr-2"></i></div>
             </div>
         `;
         div2.innerHTML = html;
-        divOption.append(div2)
+        divOption.append(div2);
 
     }
+
 
     function addSlider() {
 
@@ -138,14 +139,24 @@ $this->start('script'); ?>
         div.append(div3);
         divOption.append(div);
 
+        $('#annuler').click(function()
+        {
+        
+        let titre = $('#titre'), description = $('#description'), image = $('#images');
+        
+        titre.classList().remove();
+        description.classList().remove();
+        image.classList().remove();
+        nbSlider = 0;
+        })
+        
         let div4 = document.createElement('div');
         div3.classList.add('div');
-        div4.classList.add('text')
         div3.classList.add('col-3');
         html = `
                 <label for="nom">Annuler</label>
                 <div class="form-group ">
-                    <div class="btn btn-danger text-white"  onclick="deleteSlider()"><i class="fas fa-plus-circle mr-2"></i></div>
+                    <div class="btn btn-danger text-white"  ><i class="fas fa-plus-circle mr-2"></i></div>
                 </div>
             `;
         div4.innerHTML = html;

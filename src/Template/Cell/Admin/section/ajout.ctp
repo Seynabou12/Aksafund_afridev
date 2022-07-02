@@ -107,8 +107,7 @@ $this->start('script'); ?>
         divOption.append(div2);
 
     }
-
-
+    
     function addSlider() {
 
         let div = document.createElement('div');
@@ -156,13 +155,14 @@ $this->start('script'); ?>
         html = `
                 <label for="nom">Annuler</label>
                 <div class="form-group ">
-                    <div class="btn btn-danger text-white"  ><i class="fas fa-plus-circle mr-2"></i></div>
+                    <div class="btn btn-danger text-white" ><i class="fas fa-plus-circle mr-2"></i></div>
                 </div>
             `;
         div4.innerHTML = html;
         div.append(div4);
         divOption.append(div);
     }
+  
 </script>
 <?php $this->start('script_bottom'); ?>
 <script>

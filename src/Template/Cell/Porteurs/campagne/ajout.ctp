@@ -116,12 +116,11 @@
             });
         });
         CKEDITOR.replace('desc_longue', {
-            // language: 'fr',
-            //uiColor: '#2C80BE'
+           
         });
         $(document).ready(function() {
             var description = $('#desc_longue').val();
-            //Bind value description
+           
             $('#desc_longue').change(function() {
                 description = $(this).val();
             });

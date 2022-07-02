@@ -107,17 +107,32 @@ $this->start('script'); ?>
         divOption.append(div2);
 
     }
+
+    function removeSlider() 
+    {
+        let div = document.getElementsByClassName("class");
+        
+        div[0].remove();
+    }
+
+    // function removeSlider(id)
+    // {
+    //     let div = document.getElementsByClassName('div');
+    //     div.classList.remove('form-control');
+
+    // }
     
     function addSlider() {
 
         let div = document.createElement('div');
+        div.classList.add("class");
         div.classList.add('row');
 
         let div1 = document.createElement('div');
         div1.classList.add('input');
         div1.classList.add('text');
         div1.classList.add('col-3');
-        let html = `<label for="titre">Titre Slider ${nbSlider} </label><input type="text" name="titre-${nbSlider}" class="form-control" id="titre-${nbSlider}">`
+        let html = `<label for="titre">Titre Slider ${nbSlider} </label><input type="text" name="titre-${nbSlider}" class="form-control " id="titre-${nbSlider}">`
         div1.innerHTML = html;
         div.append(div1)
 
@@ -137,17 +152,6 @@ $this->start('script'); ?>
         div3.innerHTML = html;
         div.append(div3);
         divOption.append(div);
-
-        $('#annuler').click(function()
-        {
-        
-        let titre = $('#titre'), description = $('#description'), image = $('#images');
-        
-        titre.classList().remove();
-        description.classList().remove();
-        image.classList().remove();
-        nbSlider = 0;
-        })
         
         let div4 = document.createElement('div');
         div3.classList.add('div');
@@ -155,7 +159,7 @@ $this->start('script'); ?>
         html = `
                 <label for="nom">Annuler</label>
                 <div class="form-group ">
-                    <div class="btn btn-danger text-white" ><i class="fas fa-plus-circle mr-2"></i></div>
+                    <div class="btn btn-danger text-white" onclick="removeSlider(${nbSlider})" ><i class="fas fa-plus-circle mr-2"></i></div>
                 </div>
             `;
         div4.innerHTML = html;

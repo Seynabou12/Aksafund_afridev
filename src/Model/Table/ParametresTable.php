@@ -8,6 +8,7 @@ use Cake\Validation\Validator;
 /**
  * Parametres Model
  * @property \App\Model\Table\ParametresTable
+ *  @property \App\Model\Table\ReseauxTable|\Cake\ORM\Association\BelongsTo $Reseau
  */
 class ParametresTable extends Table
 {
@@ -24,6 +25,11 @@ class ParametresTable extends Table
         $this->setTable('parametres_generaux');
         $this->setDisplayField('nomPlateforme');
         $this->setPrimaryKey('id');
+
+        $this->belongsTo('Reseaux', [
+            'foreignKey' => 'reseau_id',
+            'joinType' => 'INNER'
+        ]);
         
     }
 
@@ -77,8 +83,18 @@ class ParametresTable extends Table
             ->scalar('logo')
             ->maxLength('logo', 255)
             ->allowEmptyString('logo');
-        
-
+            
         return $validator;
+    }
+
+     /**
+     *
+     * @param \Cake\ORM\RulesChecker $rules The rules object to be modified.
+     * @return \Cake\ORM\RulesChecker
+     */
+    public function buildRules(RulesChecker $rules)
+    {
+        $rules->add($rules->existsIn(['reseau_id'], 'Reseaux'));
+        return $rules;
     }
 }

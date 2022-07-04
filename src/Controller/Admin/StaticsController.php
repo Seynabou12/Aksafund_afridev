@@ -190,7 +190,7 @@ class StaticsController extends AppController
                         "name" => "Les Parametres",
                         "fa" => "fa-th",
                         "header" => "Gestion des Parametres",
-                        "refs" => ['parametres'],
+                        "refs" => ['parametres', 'reseaux'],
                         "items" => [
                             [
                                 "name" => "Les parametres",
@@ -262,6 +262,27 @@ class StaticsController extends AppController
                             [
                                 "name" => "Ajouter une image",
                                 "controller" => "Images",
+                                "action" => "add"
+                            ]
+                        ]
+    
+                    ],
+
+                       // Les resaux sociaux de la plateforme
+                       [
+                        "name" => "Les Reseaux Sociaux",
+                        "fa" => "fa-th",
+                        "header" => "Gestion des Reseaux",
+                        "refs" => ['reseaux'],
+                        "items" => [
+                            [
+                                "name" => "Les reseaux",
+                                "controller" => "Reseaux",
+                                "action" => "index"
+                            ],
+                            [
+                                "name" => "Ajouter un reseau",
+                                "controller" => "Reseaux",
                                 "action" => "add"
                             ]
                         ]

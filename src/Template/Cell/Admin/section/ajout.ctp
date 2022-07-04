@@ -81,49 +81,43 @@ $this->start('script'); ?>
         }
     }
 
-    function addImage() {
+    function addImage()
+    {
         let div = document.createElement('div');
+        div.classList.add("class");
         div.classList.add('row');
 
         let div1 = document.createElement('div');
         div1.classList.add('input');
         div1.classList.add('text');
         div1.classList.add('col-6')
-        html = `<label for="nom">Images (Vous pouvez selectionner plusieurs images à la fois) </label><input type="file" accept="image/*" name="images[]" multiple class="form-control" id="images">`
+        let html = `<label for="nom">Images (Vous pouvez selectionner plusieurs images à la fois)</label><input type="file" accept="image/*" name="images[]" multiple class="form-control" id="images">`
         div1.innerHTML = html;
         divOption.append(div1)
 
         let div2 = document.createElement('div');
         div2.classList.add('div');
-        div2.classList.add('text');
-        div2.classList.add('col-6')
+        div2.classList.add('col-6');
         html = `
-            <label for="nom">Annuler</label>
-            <div class="form-group ">
-                <div class="btn btn-danger text-white"  onclick="removeSlider()" id="annuler"><i class="fas fa-plus-circle mr-2"></i></div>
-            </div>
-        `;
+                <label for="nom">Annuler</label>
+                <div class="form-group ">
+                    <div class="btn btn-danger text-white" onclick="removeSlider()" ><i class="fas fa-plus-circle mr-2"></i></div>
+                </div>
+            `;
         div2.innerHTML = html;
-        divOption.append(div2);
+        div.append(div2);
+        divOption.append(div);
 
     }
 
     function removeSlider() 
     {
         let div = document.getElementsByClassName("class");
-        
         div[0].remove();
     }
 
-    // function removeSlider(id)
-    // {
-    //     let div = document.getElementsByClassName('div');
-    //     div.classList.remove('form-control');
-
-    // }
-    
-    function addSlider() {
-
+    function addSlider()
+    {
         let div = document.createElement('div');
         div.classList.add("class");
         div.classList.add('row');
@@ -154,8 +148,8 @@ $this->start('script'); ?>
         divOption.append(div);
         
         let div4 = document.createElement('div');
-        div3.classList.add('div');
-        div3.classList.add('col-3');
+        div4.classList.add('div');
+        div4.classList.add('col-3');
         html = `
                 <label for="nom">Annuler</label>
                 <div class="form-group ">

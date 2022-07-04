@@ -19,7 +19,11 @@ class ParametresController extends AppController
      */
     public function index()
     {
-        $parametres = $this->Parametres->find('all');
+        $this->paginate = [
+            'contain' => ['Reseaux']
+        ];
+        $parametres = $this->paginate($this->Parametres);
+
         $this->set(compact('parametres'));
     }
 
@@ -33,7 +37,7 @@ class ParametresController extends AppController
     public function view($id = null)
     {
         $parametre = $this->Parametres->get($id, [
-            'contain' => []
+            'contain' => ['Reseaux']
         ]);
         $this->set('parametre', $parametre);
     }
@@ -67,8 +71,8 @@ class ParametresController extends AppController
             }
             $this->Flash->error(__('Ces parametres n\'ont pas été enregistrer. Veuillez Reprendre SVP '));
         }
-
-        $this->set(compact('parametre'));
+        $reseaux = $this->Parametres->Reseaux->find('list', ['limit' => 200]);
+        $this->set(compact('parametre','reseaux'));
     }
 
     /**
@@ -104,7 +108,9 @@ class ParametresController extends AppController
            
             $this->Flash->error(__('Les parametres n\' ont pas été enregistré. SVP, veuillez reprendre.'));
         }
-        $this->set(compact('parametre'));
+
+        $reseaux = $this->Parametres->Reseaux->find('list', ['limit' => 200]);
+        $this->set(compact('parametre', 'reseaux'));
     }
 
     /**

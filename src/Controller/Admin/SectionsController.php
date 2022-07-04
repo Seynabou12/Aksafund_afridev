@@ -163,11 +163,7 @@ class SectionsController extends AppController
 
                 return $this->redirect(['action' => 'index']);
             }
-            // if ($this->Sections->save($section)) {
-            //     $this->Flash->success(__('The section has been saved.'));
-
-            //     return $this->redirect(['action' => 'index']);
-            // }
+            
             $this->Flash->error(__('The section could not be saved. Please, try again.'));
         }
         $themes = $this->Sections->Themes->find('list', ['limit' => 200]);

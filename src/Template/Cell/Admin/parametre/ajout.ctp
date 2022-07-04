@@ -37,6 +37,9 @@
                             echo $this->Form->control('ville',['class'=>'form-control','label'=>'ville','default'=>$parametre->ville]);
                             echo $this->Form->control('pays',['class'=>'form-control','label'=>'pays','default'=>$parametre->pays]);
                             echo $this->Form->control('logo',['class'=>'form-control','label'=>'logo','type'=>'file','default'=>$parametre->logo]);
+                            echo '<label>Reseaux</label>';
+                            echo $this->Form->select('reseau_id', $reseaux, ['class' => 'form-control', 'label' => 'Reseau', 'default' => $parametre->reseau_id]);
+                            
                         ?>
                         </div>
                     </div>

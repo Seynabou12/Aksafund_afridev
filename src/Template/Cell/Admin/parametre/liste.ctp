@@ -19,6 +19,7 @@
                     <th > Ville</th>
                     <th > Pays</th>
                     <th > Logo</th>
+                    <th > Reseaux Sociaux</th>
                     <th scope="col" class="actions"><?= __('Actions') ?></th>
                 </tr>
             </thead>
@@ -33,7 +34,8 @@
                     <td><?= h($parametre->ville) ?></td>
                     <td><?= h($parametre->pays) ?></td>
                     <td><?= h($parametre->logo) ?></td>
-                   
+                    <td><?= $parametre->has('reseaux') ? $this->Html->link($parametre->reseaux->logo, ['controller' => 'Reseaux', 'action' => 'view', $parametre->reseaux->id]) : '' ?></td>
+                    
                     <td class="actions">
                         <a href="<?= $this->Url->Build([ 'action' => 'view', $parametre->id]) ?>" class="btn btn-sm btn-sm1 btn-primary">
                             <i class="fas fa-eye"></i>

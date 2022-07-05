@@ -70,11 +70,14 @@ class AppController extends Controller
         $current = $this->Auth->user()[0];
         $this->loadModel('Typecategorys');
         $types = $this->Typecategorys->find('all',[
-            // 'contain'=>['Categorys'],
+            
         ])->toArray();
         $this->set(compact('types','current'));
-
+        // dd($types);
+ 
     }
+    
+
     public function isAuthorized($user)
     {
         return true;
@@ -101,6 +104,6 @@ class AppController extends Controller
                 ])
                 ->send();
         return $jsonResponse;
-                // dd(;
+                
     }
 }

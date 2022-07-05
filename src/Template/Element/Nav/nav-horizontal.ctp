@@ -4,9 +4,9 @@
             <div class="col-md-12 text-white text-center">
 
                 <h1 class="h4">
-                <a href="/" class="typewrite text-white" data-period="2000" data-type='[ "Bienvenue, à Aksafund", "Faites un geste simple"]'>
-                    <span class="wrap"></span>
-                </a>
+                    <a href="/" class="typewrite text-white" data-period="2000" data-type='[ "Bienvenue, à <?= $parametre->nomPlateforme ?>", "Faites un geste simple"]'>
+                        <span class="wrap"></span>
+                    </a>
                 </h1>
             </div>
         </div>
@@ -15,14 +15,14 @@
         <div class="row">
             <div class="col-md-4">
                 <a class="navbar-brand d-none d-md-block" href="/">
-                    <?= $this->Html->image("logo.png", ['style' => 'width:170px']) ?>
+                    <?= $this->Html->image($parametre->logo, ['style' => 'width:170px']) ?>
                 </a>
             </div>
             <div class="col-md-8 text-right locations">
-                <span> <span>Service</span > <i class="fas fa-phone"></i> <a href="tel:774623352" style="color: #6c757d !important;"> +221 77 462 33 52</a> </span><br>
+                <span> <span>Service</span > <i class="fas fa-phone"></i> <a href="tel:774623352" style="color: #6c757d !important;"> <?= $parametre->telephone ?></a> </span><br>
                 <span>
                     <span>Localisation</span> <i class="fas fa-enveloppe" aria-hidden="true"></i>
-                    <a href='mailto:contact@aksafund.com' style="color: #6c757d !important;"> contact@aksafund.com </a>
+                    <a href='mailto:contact@aksafund.com' style="color: #6c757d !important;"> <?= $parametre->email ?> </a>
                     </span>
             </div>
         </div>

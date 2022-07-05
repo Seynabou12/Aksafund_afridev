@@ -25,11 +25,11 @@
             <p class="titre">Contact</p>
             <p class="d-flex">
                 <span><i class="fa fa-phone text-orange"></i> </span>
-                <span class="ml-2">(+221) 77 462 33 52</span>
+                <span class="ml-2">(+221) <?= $parametre->telephone ?></span>
             </p>
             <p class="d-flex">
                 <span><i class="fa fa-map-marked text-orange"></i> </span>
-                <span class="ml-2"> Castor en face Sakanal, Dakar, Sénégal</span>
+                <span class="ml-2"> <?= $parametre->adresse ?></span>
             </p>
         </div>
     </div>

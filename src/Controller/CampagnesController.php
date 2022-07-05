@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Exception;
 use PayExpress;
 use \Mailjet\Resources;
 \Paydunya\Setup::setMasterKey("PNvCRoX6-xbSm-0Gtt-TOxq-jN9mbhgKbfU3");

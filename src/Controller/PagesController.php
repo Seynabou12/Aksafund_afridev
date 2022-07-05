@@ -17,6 +17,7 @@ namespace App\Controller;
 use Cake\Core\Configure;
 use Cake\Http\Exception\ForbiddenException;
 use Cake\Http\Exception\NotFoundException;
+use Cake\ORM\TableRegistry;
 use Cake\View\Exception\MissingTemplateException;
 
 /**
@@ -53,6 +54,26 @@ class PagesController extends AppController
             'contain'=>['Categorys.Typecategorys','Users','Fichiers'],
             'conditions'=>['Typecategorys.name'=>'Projets']
         ])->toArray();
+
+        $parametres = TableRegistry::get('Parametres');
+        $query = $parametres->find('all', [
+        ]);
+        $parametre = $query->first();
+
+        $sections = TableRegistry::get('Sections');
+        $query = $sections->find('all', [
+        ]);
+        $section = $query->toArray();
+
+        $sliders = TableRegistry::get('Sliders');
+        $query = $sliders->find('all', [
+        ]);
+        $slider = $query->toArray();
+
+        $images = TableRegistry::get('Images');
+        $query = $images->find('all', [
+        ]);
+        $image = $query->toArray();
         
         $causes = $this->Campagnes->find('all',[
             'contain'=>['Categorys.Typecategorys','Users','Fichiers'],
@@ -73,7 +94,7 @@ class PagesController extends AppController
         if (!empty($path[1])) {
             $subpage = $path[1];
         }
-        $this->set(compact('page', 'subpage','projets','causes','campagnes'));
+        $this->set(compact('page', 'subpage','projets','causes','campagnes', 'parametre', 'slider', 'image', 'section'));
 
         try {
             $this->render(implode('/', $path));

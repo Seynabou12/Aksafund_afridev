@@ -21,7 +21,7 @@ class ReseauxTable extends Table
         parent::initialize($config);
 
         $this->setTable('reseaux');
-        $this->setDisplayField('logo');
+        $this->setDisplayField('nom');
         $this->setPrimaryKey('id');
 
         $this->addBehavior('Timestamp');

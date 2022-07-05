@@ -36,18 +36,16 @@ $cakeDescription = 'Aksafund: plateforme de collecte de fonds';
     <div class="row">
         <div class="col-md-12" >
             <div class="slick-slider2 m-auto">
-                <?php  for ($i=0; $i < 2; $i++) { ?>
-                    <?php if($i==1){$img= 'background.jpg'; } else{ $img = 'gallery-md3.jpg'; }?>
-                    <div class="col-md-12" style=";background-size:cover;;background-position:center center;height: 500px;background-image: url('<?= $this->Url->Image($img) ?>')">
+                <?php  foreach ($slider as $key ) { ?>
+                    <div class="col-md-12" style=";background-size:cover;;background-position:center center;height: 500px;background-image: url('<?= $this->Url->Image($key->images) ?>')">
                         <div class="title-slider d-flex align-items-start flex-column bd-highlight mb-3" style="height: 200px;">
-                         <?php if($i== 1){} ?>
                             <div class="ml-2 bd-highlight mt-4">
-                            <h1 class="h1 text-white pt-4 gros-titre">FAITES UN DON</h1>
+                            <h1 class="h1 text-white pt-4 gros-titre"><?= $key->titre ?></h1>
                             </div>
                             <div class="p-2 mt-4 bd-highlight bg-orange text-white ml-2">
                             <div class="soustitre font-weight-bold">POUR UNE CAUSE OU UN PROJET</div>
                             </div>
-                            <div class="p-2 bd-highlight text-white">Participer à une cause noble pour aider !</div>
+                            <div class="p-2 bd-highlight text-white"> <?= $key->description ?></div>
                         </div>
                     </div>
                 <?php } ?>
@@ -115,21 +113,22 @@ $cakeDescription = 'Aksafund: plateforme de collecte de fonds';
 <section class="section2">
     <div class="causes">
         <div class="col-md-12 causes_titre">
-            C'est quoi <span class="text-orange text-orange">Aksafund ?</span>
+               C'est quoi <span class="text-orange text-orange"> <?= $parametre->nomPlateforme  ?> </span> 
+              
+            <!-- C'est quoi <span class="text-orange text-orange">Aksafund ?</span> -->
             <div class="title-icon">
                 <i class="fas fa-hand-holding-heart text-orange"></i>
             </div>
         </div>
         <div class="mb-4 paragraphe" style="font-size:14px">
-            La plateforme web Aksafund a été spécialement conçue <br>pour la collecte de fonds et les services aux associations.
+            <!-- La plateforme web Aksafund a été spécialement conçue <br>pour la collecte de fonds et les services aux associations. -->
         </div>
     </div>
     <div class="row">
-
          <div class="col-md-12 section2_img">
-            <span> <img src="<?= $this->Url->Image('1.png') ?>"></span>
-            <span> <img src="<?= $this->Url->Image('2.png') ?>"></span>
-            <span> <img src="<?= $this->Url->Image('3.png') ?>"></span>
+            <?php foreach($image as $key) {?>
+                <span> <img src="<?= $this->Url->Image($key->image) ?>"></span>
+            <?php } ?>
          </div>
          <div class="section2_titre col-md-12 text-center mt-2 ">
             <p >Vous avez des projets ou causes à défendre ?<br> Nous vous y aidons.</p>
@@ -144,6 +143,7 @@ $cakeDescription = 'Aksafund: plateforme de collecte de fonds';
                 <a href="/authentification/login"  class="btn text-white waves-effect waves-light" style="background-color: #f26522 !important;border-radius:50px">Créer une campagne</a>
             <?php endif;?>
          </div>
+         
     </div>
 </section>
 <section class="section3">
@@ -201,6 +201,7 @@ $cakeDescription = 'Aksafund: plateforme de collecte de fonds';
         </div>
     </div>
 </section>
+<!-- sction qui sommes nous -->
 <section class="section3">
     <div class="qsn ">
         <div class="col-md-12 qsn_titre ">Qui soms<span class="text-orange text-orange">es-nous ?</span>
@@ -211,15 +212,18 @@ $cakeDescription = 'Aksafund: plateforme de collecte de fonds';
         <div class="col-md-12 qsn_contenu">
             <div class="row qsn">
                 <div class="col-md-8 col-5 qsn_contenu_parag">
-                    La plateforme web Aksafund a été spécialement conçue pour la collecte de fonds et les services aux associations.
+                    <?php foreach($section as $key) {?>
+                    <?= $key->texte ?>
+                    <!-- La plateforme web Aksafund a été spécialement conçue pour la collecte de fonds et les services aux associations.
                     La plateforme a pour rôle de permettre aux participants de faire des contributions et de pouvoir suivre les campagnes en ligne.
-                    De ce fait le processus de donation devient plus facile et plus transparent.
+                    De ce fait le processus de donation devient plus facile et plus transparent. -->
+                    <?php } ?>
                 </div>
                 <div class="col-md-2 col-5 qsn_contenu_annonce">
                     <i class="fa fa-bullhorn col-md-12"></i>
                     <p class="qsn_contenu_annonce_titre">FAITES UN GESTE !</p>
                     <p class="qsn_contenu_annonce_parag">
-                        Soutenez le projet Aksafund et participez, comme des milliers d'autres volontaires à accelerer l'évolution des actions sociales en cours
+                        Soutenez le projet <?= $parametre->nomPlateforme ?> et participez, comme des milliers d'autres volontaires à accelerer l'évolution des actions sociales en cours
                     </p>
 
 
@@ -342,10 +346,11 @@ $cakeDescription = 'Aksafund: plateforme de collecte de fonds';
                 </div>
             </div>
             <div class="partenaires d-flex justify-content-center mb-4">
-                <!-- <img src="img/afridev.png" alt="" width="100px" height="100%">
+               
+                <img src="img/afridev.png" alt="" width="100px" height="100%">
                 <img src="img/2stv.png" alt="" width="100px" height="100%">
                 <img src="img/ms.png" alt="" width="100px" height="100%">
-                <img src="img/paydunya.jpeg" alt="" width="100px" height="100%"> -->
+                <img src="img/paydunya.jpeg" alt="" width="100px" height="100%">
             </div>
         </div>
         <div class="causes">

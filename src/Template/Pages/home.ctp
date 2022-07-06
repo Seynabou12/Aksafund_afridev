@@ -126,9 +126,9 @@ $cakeDescription = 'Aksafund: plateforme de collecte de fonds';
     </div>
     <div class="row">
          <div class="col-md-12 section2_img">
-            <?php foreach($image as $key) {?>
-                <span> <img src="<?= $this->Url->Image($key->image) ?>"></span>
-            <?php } ?>
+            <span> <img src="img/1.png"></span>
+            <span> <img src="img/2.png"></span>
+            <span> <img src="img/3.png"></span>
          </div>
          <div class="section2_titre col-md-12 text-center mt-2 ">
             <p >Vous avez des projets ou causes à défendre ?<br> Nous vous y aidons.</p>
@@ -346,11 +346,13 @@ $cakeDescription = 'Aksafund: plateforme de collecte de fonds';
                 </div>
             </div>
             <div class="partenaires d-flex justify-content-center mb-4">
+                <?php foreach($image as $key) {?>
+                    <img src="<?= $this->Url->Image($key->image) ?>" alt="" width="100px" height="100%">
+                <?php } ?>
                
-                <img src="img/afridev.png" alt="" width="100px" height="100%">
-                <img src="img/2stv.png" alt="" width="100px" height="100%">
+                <!-- <img src="img/2stv.png" alt="" width="100px" height="100%">
                 <img src="img/ms.png" alt="" width="100px" height="100%">
-                <img src="img/paydunya.jpeg" alt="" width="100px" height="100%">
+                <img src="img/paydunya.jpeg" alt="" width="100px" height="100%"> -->
             </div>
         </div>
         <div class="causes">

@@ -11,16 +11,16 @@
         <table id="datatable" class="table table-bordered dataTable" width="100%">
             <thead>
                 <tr>
-                    <th > name</th>
+                    <th> name</th>
+                    <th> Texte</th>
                     <th scope="col" class="actions"><?= __('Actions') ?></th>
                 </tr>
             </thead>
             <tbody>
                 <?php foreach ($typecategorys as $type): ?>
                 <tr>
-                    <td>
-                        <?= $type->name ?>
-                    </td>
+                    <td><?= h($type->name) ?></td>
+                    <td><?= h($type->texte) ?></td>
                     <td class="actions">
                         <a href="<?= $this->Url->Build(['controller' => 'Typecategorys', 'action' => 'view', $type->id]) ?>" class="btn btn-sm btn-sm1 btn-primary">
                             <i class="fas fa-eye"></i>

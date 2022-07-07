@@ -52,6 +52,11 @@ class TypecategorysTable extends Table
             ->maxLength('name', 45)
             ->allowEmptyString('name');
 
+        $validator
+            ->scalar('texte')
+            ->maxLength('texte', 200)
+            ->allowEmptyString('texte');
+
         return $validator;
     }
 }

@@ -49,7 +49,6 @@ class SlidersTable extends Table
             ->maxLength('titre', 255)
             ->allowEmptyString('titre');
 
-
         $validator
             ->scalar('description')
             ->maxLength('description', 255)

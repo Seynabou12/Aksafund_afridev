@@ -7,7 +7,7 @@ $this->assign('title', 'Ajout - Nouveau Type');
     $this->assign('view', 'action');
     $this->assign('action', $this->Url->build(['action' => 'add']));
     $this->extend('/Cell/Admin/type/ajout'); ?>
-?>
+
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
@@ -20,6 +20,7 @@ $this->assign('title', 'Ajout - Nouveau Type');
         <legend><?= __('Add Typecategory') ?></legend>
         <?php
             echo $this->Form->control('name');
+            echo $this->Form->control('texte');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

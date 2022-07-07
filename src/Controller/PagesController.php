@@ -74,6 +74,14 @@ class PagesController extends AppController
         $query = $images->find('all', [
         ]);
         $image = $query->toArray();
+
+        $types = TableRegistry::get('Typecategorys');
+        $query = $types->find('all', []);
+        $type = $query->toArray();
+
+        $reseaux = TableRegistry::get('Reseaux');
+        $query = $reseaux->find('all', []);
+        $reseau = $query->toArray();
         
         $causes = $this->Campagnes->find('all',[
             'contain'=>['Categorys.Typecategorys','Users','Fichiers'],
@@ -94,7 +102,7 @@ class PagesController extends AppController
         if (!empty($path[1])) {
             $subpage = $path[1];
         }
-        $this->set(compact('page', 'subpage','projets','causes','campagnes', 'parametre', 'slider', 'image', 'section'));
+        $this->set(compact('page', 'subpage','projets','causes','campagnes', 'parametre', 'slider', 'image', 'section', 'type', 'reseau'));
 
         try {
             $this->render(implode('/', $path));

@@ -14,12 +14,14 @@ $this->assign('title', 'Ajout - Nouveau Reseau');
     </ul>
 </nav>
 <div class="themes form large-9 medium-8 columns content">
-    <?= $this->Form->create($reseau , ['type'=>'file']) ?>
+    <?= $this->Form->create($reseau , ['type'=>'file'], ['type'=>'url']) ?>
     <fieldset>
         <legend><?= __('Add Reseau') ?></legend>
         <?php
             echo $this->Form->control('nom');
             echo $this->Form->control('logo', ['type'=>'file']);
+            echo $this->Form->control('lien', ['type'=>'url']);
+            
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

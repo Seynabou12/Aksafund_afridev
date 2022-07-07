@@ -27,6 +27,7 @@
                             <?php
                                 echo $this->Form->control('nom',['class'=>'form-control','label'=>'Nom Reseau Social','default'=>$reseau->nom]);
                                 echo $this->Form->control('logo',['class'=>'form-control','value'=>$reseau->logo, 'multiple', 'label'=>"logo(vous pouvez enregistrer plusieurs logo)",'type'=>'file', 'placeholder'=>'Entrer logo des reseaux sociaux']);
+                                echo $this->Form->control('lien',['class'=>'form-control','value'=>$reseau->lien,'label'=>"Lien",'type'=>'url', 'placeholder'=>'Entrer lien vers le réseau']);
                             ?>
                         </div>
                        

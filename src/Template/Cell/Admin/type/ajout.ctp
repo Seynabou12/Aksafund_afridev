@@ -1,4 +1,7 @@
-<?php 
+<?php
+
+use PhpParser\Node\Stmt\Label;
+
     $this->assign('title', $this->fetch('title'));
     $this->start('script'); ?>
     <script src="https://cdn.ckeditor.com/4.11.2/standard/ckeditor.js"></script>
@@ -28,7 +31,8 @@
                     <div class="card-body row">
                         <div class="col-md-12">
                             <?php
-                                echo $this->Form->control('name',['class'=>'form-control','value'=>$typecategory->name,'label'=>"Nom", 'placeholder'=>'Saisir le type de catégorie']);
+                                echo $this->Form->control('name',['class'=>'form-control','value'=>$typecategory->name,'label'=>"Nom", 'placeholder'=>'Saisir nom du type de catégorie']);
+                                echo $this->Form->control('texte', ['class' => 'form-control','value' => $typecategory->texte, 'label' => 'Texte', 'placeholder'=>'Saisir la description du type de catégorie']);
                             ?>
                         </div>
                         <div class="col-md-12">

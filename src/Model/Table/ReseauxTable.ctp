@@ -48,6 +48,10 @@ class ReseauxTable extends Table
             ->scalar('logo')
             ->maxLength('logo', 100)
             ->allowEmptyString('logo');
+        $validator
+            ->scalar('lien')
+            ->maxLength('lien', 255)
+            ->allowEmptyString('lien');
 
         return $validator;
     }

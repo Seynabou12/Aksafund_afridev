@@ -54,25 +54,21 @@ $cakeDescription = 'Aksafund: plateforme de collecte de fonds';
         </div>
     </div>
     <div class="row section1 m-2">
-        <div class="col-md-4 ml-auto mr-0 section1_block projets">
+    <?php foreach($types as $type) {?>
+        
+        <div class="col-md-4 ml-auto mr-0 section1_block projets text-left">
             <div class="">
-                <div class="section1_block_titre">Projets</div>
+
+                <div class="section1_block_titre"><?= $type->name ?></div>
                 <div class="section1_block_description">
-                    Il y a beaucoup d'idées, de projets qui méritent une collecte de fonds.
-                    Ceux qui les partagent croient en votre soutien, vos bonnes actions. Vous pouvez les aider en contribuant à leur développpement.
+                <?= $type->texte ?>
                 </div>
             </div>
         </div>
-        <div class="col-md-4 ml-0 mr-auto section1_block social text-left">
-            <div class="">
-                <div class="section1_block_titre">Social</div>
-                <div class="section1_block_description">
-                    Nous croyons que les associations sont créateurs d’un lien inestimable pour le vivre ensemble.
-                    C’est pour les aider dans leurs activités que notre équipe a construit une solution à leur image.
-                </div>
-            </div>
-        </div>
+    <?php }?>
+            
     </div>
+    
     <!-- <div class="row header_slider">
         <div class="col-12 col-sm-6 col-md-6 header_slider_left causes">
         <div class="slick-slider2">
@@ -110,6 +106,8 @@ $cakeDescription = 'Aksafund: plateforme de collecte de fonds';
         </div>
     </div> -->
 </section>
+
+<!-- Section c'est quoi nom section -->
 <section class="section2">
     <div class="causes">
         <div class="col-md-12 causes_titre">
@@ -121,7 +119,7 @@ $cakeDescription = 'Aksafund: plateforme de collecte de fonds';
             </div>
         </div>
         <div class="mb-4 paragraphe" style="font-size:14px">
-            <!-- La plateforme web Aksafund a été spécialement conçue <br>pour la collecte de fonds et les services aux associations. -->
+            La plateforme web <?= $parametre->nomPlateforme ?> a été spécialement conçue <br>pour la collecte de fonds et les services aux associations.
         </div>
     </div>
     <div class="row">
@@ -146,6 +144,9 @@ $cakeDescription = 'Aksafund: plateforme de collecte de fonds';
          
     </div>
 </section>
+<!-- end section c'est quoi aksafund -->
+
+<!-- Section Campagne -->
 <section class="section3">
     <div class="causes">
         <div class="col-md-12 causes_titre">
@@ -201,6 +202,8 @@ $cakeDescription = 'Aksafund: plateforme de collecte de fonds';
         </div>
     </div>
 </section>
+<!-- End section Campagne -->
+
 <!-- sction qui sommes nous -->
 <section class="section3">
     <div class="qsn ">
@@ -214,9 +217,7 @@ $cakeDescription = 'Aksafund: plateforme de collecte de fonds';
                 <div class="col-md-8 col-5 qsn_contenu_parag">
                     <?php foreach($section as $key) {?>
                     <?= $key->texte ?>
-                    <!-- La plateforme web Aksafund a été spécialement conçue pour la collecte de fonds et les services aux associations.
-                    La plateforme a pour rôle de permettre aux participants de faire des contributions et de pouvoir suivre les campagnes en ligne.
-                    De ce fait le processus de donation devient plus facile et plus transparent. -->
+                   
                     <?php } ?>
                 </div>
                 <div class="col-md-2 col-5 qsn_contenu_annonce">
@@ -225,14 +226,14 @@ $cakeDescription = 'Aksafund: plateforme de collecte de fonds';
                     <p class="qsn_contenu_annonce_parag">
                         Soutenez le projet <?= $parametre->nomPlateforme ?> et participez, comme des milliers d'autres volontaires à accelerer l'évolution des actions sociales en cours
                     </p>
-
-
                 </div>
             </div>
         </div>
     </div>
-
 </section>
+<!-- end secton qui sommes nous -->
+
+<!-- Section Categories -->
 <section class="section4" style="display:none">
     <div class="categories">
         <div class="col-md-12 causes_titre">
@@ -248,7 +249,6 @@ $cakeDescription = 'Aksafund: plateforme de collecte de fonds';
     <div class="causes">
         <div class="col-md-12">
             <div class="row categories">
-                <!-- <div class="categories_titre col-md-12">Causes</div> -->
                 <?php if(!empty($causes)): for ($i=0; $i < count($causes) ; $i++) {  ?>
                     <div class="col-md-4 col-sm-6 causes_block">
                         <div class="">
@@ -335,6 +335,7 @@ $cakeDescription = 'Aksafund: plateforme de collecte de fonds';
         </div> -->
     </div>
 </section>
+<!-- End section Categories -->
 
 <!-- Section Nos Partenaires -->
     <section class="section3">
@@ -349,10 +350,6 @@ $cakeDescription = 'Aksafund: plateforme de collecte de fonds';
                 <?php foreach($image as $key) {?>
                     <img src="<?= $this->Url->Image($key->image) ?>" alt="" width="100px" height="100%">
                 <?php } ?>
-               
-                <!-- <img src="img/2stv.png" alt="" width="100px" height="100%">
-                <img src="img/ms.png" alt="" width="100px" height="100%">
-                <img src="img/paydunya.jpeg" alt="" width="100px" height="100%"> -->
             </div>
         </div>
         <div class="causes">
@@ -360,3 +357,4 @@ $cakeDescription = 'Aksafund: plateforme de collecte de fonds';
             </div>
         </div>
     </section>
+<!-- end section Nos Partenaires -->

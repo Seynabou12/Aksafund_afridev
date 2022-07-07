@@ -12,6 +12,7 @@
             <tr>
                 <th> nom</th>
                 <th> logo</th>
+                <th> lien</th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
@@ -20,6 +21,7 @@
             <tr>
                 <td><?= h($reseau->nom) ?></td>
                 <td><?= h($reseau->logo) ?></td>
+                <td><?= h($reseau->lien) ?></td>
                 <td class="actions">
                     <a href="<?= $this->Url->Build(['controller' => 'Reseaux', 'action' => 'view', $reseau->id]) ?>" class="btn btn-sm btn-sm1 btn-primary">
                         <i class="fas fa-eye"></i>

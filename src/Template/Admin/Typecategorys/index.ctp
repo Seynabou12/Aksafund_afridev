@@ -19,6 +19,7 @@ $this->extend('/Cell/Admin/type/liste');
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('name') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('texte')?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
@@ -27,6 +28,7 @@ $this->extend('/Cell/Admin/type/liste');
             <tr>
                 <td><?= $this->Number->format($typecategory->id) ?></td>
                 <td><?= h($typecategory->name) ?></td>
+                <td><?= h($typecategory->texte) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $typecategory->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $typecategory->id]) ?>

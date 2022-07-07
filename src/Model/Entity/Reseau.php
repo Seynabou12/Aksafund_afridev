@@ -10,6 +10,7 @@ use Cake\ORM\Entity;
  * @property int $id
  * @property string|null $nom
  * @property string|null $logo
+ * @property string|null $lien
  */
 class Reseau extends Entity
 {
@@ -21,5 +22,6 @@ class Reseau extends Entity
     protected $_accessible = [
         'nom'=>true,
         'logo'=>true,
+        'lien'=>true,
     ];
 }

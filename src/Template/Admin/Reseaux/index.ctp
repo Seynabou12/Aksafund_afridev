@@ -20,6 +20,7 @@ $this->extend('/Cell/Admin/reseau/liste');
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('nom')?></th>
                 <th scope="col"><?= $this->Paginator->sort('logo') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('lien') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
@@ -29,6 +30,7 @@ $this->extend('/Cell/Admin/reseau/liste');
                 <td><?= $this->Number->format($reseau->id) ?></td>
                 <td><?= h($reseau->nom) ?></td>
                 <td><?= h($reseau->logo) ?></td>
+                <td><?= h($reseau->lien) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $reseau->id]) ?>
                 </td>

@@ -32,7 +32,7 @@
             <nav class="navbar navbar-expand-lg navbar-light bg-light2 p-0 pl-4 pr-3 navbar-scrolled" id="mainNav">
                 <div class="container p-0">
                 <a class="navbar-brand js-scroll-trigger d-block d-sm-none" href="/">
-                    <?= $this->Html->image("logo.png", ['style' => 'width:120px']) ?>
+                    <?= $this->Html->image($parametre->logo, ['style' => 'width:120px']) ?>
                 </a>
                 <button class="navbar-toggler navbar-toggler-right collapsed" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -59,27 +59,14 @@
                         </li>
 
                     </ul>
-                    <ul class="navbar-nav nav-flex-icons">
-                        <li class="nav-item">
-                            <a class="nav-link waves-effect waves-light" href="#">
-                                <i class="fab fa-twitter header-rs"></i>
+                    <ul class="navbar-nav nav-flex-icons"> 
+                    <?php foreach($reseau as $key){ ?>
+                        <li class="nav-item"> 
+                            <a class="nav-link waves-effect waves-light header-rs" target="_blank" href="<?= $this->Url->Build($key->lien)?>">
+                                <?= $this->Html->image($key->logo, ['style' => 'width:20px']) ?>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link waves-effect waves-light" target="_blank" href="#">
-                                <i class="fab fa-facebook header-rs"></i>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link waves-effect waves-light" target="_blank" href="#">
-                                <i class="fab fa-youtube header-rs"></i>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link waves-effect waves-light" target="_blank" href="#">
-                                <i class="fab fa-linkedin header-rs"></i>
-                            </a>
-                        </li>
+                    <?php }?>
                         <li class="nav-item">
                             <?php
                             if(isset($current)):

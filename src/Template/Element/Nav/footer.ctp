@@ -6,7 +6,7 @@
         <div class="col-md-4 footer_block" id="about">
             <p><img src="<?= $this->Url->Image('logo.png') ?>" width="100px"></p>
             <p>
-                La plateforme web Aksafund a été spécialement conçue pour la collecte de fonds et les services aux associations. La plateforme a pour rôle de permettre aux participants de faire des contributions et de pouvoir suivre les campagnes en ligne. De ce fait le processus de donation devient plus facile et plus transparent.
+                La plateforme web <?= $parametre->nomPlateforme ?> a été spécialement conçue pour la collecte de fonds et les services aux associations. La plateforme a pour rôle de permettre aux participants de faire des contributions et de pouvoir suivre les campagnes en ligne. De ce fait le processus de donation devient plus facile et plus transparent.
             </p>
         </div>
         <div class="col-md-4 footer_block">

@@ -26,6 +26,7 @@
         <legend><?= __('Edit Typecategory') ?></legend>
         <?php
             echo $this->Form->control('name');
+            echo $this->Form->control('texte');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

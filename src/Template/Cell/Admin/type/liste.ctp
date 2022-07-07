@@ -13,6 +13,7 @@
                 <tr>
                     <th> name</th>
                     <th> Texte</th>
+                    <th> Couleur</th>
                     <th scope="col" class="actions"><?= __('Actions') ?></th>
                 </tr>
             </thead>
@@ -21,6 +22,7 @@
                 <tr>
                     <td><?= h($type->name) ?></td>
                     <td><?= h($type->texte) ?></td>
+                    <td><?= h($type->couleur) ?></td>
                     <td class="actions">
                         <a href="<?= $this->Url->Build(['controller' => 'Typecategorys', 'action' => 'view', $type->id]) ?>" class="btn btn-sm btn-sm1 btn-primary">
                             <i class="fas fa-eye"></i>

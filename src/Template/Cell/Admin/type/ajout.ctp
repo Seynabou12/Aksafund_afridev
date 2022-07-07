@@ -33,6 +33,7 @@ use PhpParser\Node\Stmt\Label;
                             <?php
                                 echo $this->Form->control('name',['class'=>'form-control','value'=>$typecategory->name,'label'=>"Nom", 'placeholder'=>'Saisir nom du type de catégorie']);
                                 echo $this->Form->control('texte', ['class' => 'form-control','value' => $typecategory->texte, 'label' => 'Texte', 'placeholder'=>'Saisir la description du type de catégorie']);
+                                echo $this->Form->control('couleur',['class'=>'form-control','value'=>$typecategory->couleur,'label'=>"Couleur", 'placeholder'=>'Saisir la couleur du type de catégorie']);
                             ?>
                         </div>
                         <div class="col-md-12">
@@ -49,12 +50,11 @@ use PhpParser\Node\Stmt\Label;
 <?php $this->start('script_bottom'); ?>
     <script>
         CKEDITOR.replace('description', {
-            // language: 'fr',
-            //uiColor: '#2C80BE'
+
         });
         $(document).ready(function() {
             var description = $('#description').val();
-            //Bind value description
+            
             $('#description').change(function() {
                 description = $(this).val();
             });

@@ -25,7 +25,6 @@
                     <td><?= h($slider->description) ?></td>
                     <td><?= h($slider->images) ?></td>
                     <td><?= $slider->has('section') ? $this->Html->link($slider->section->nom, ['controller' => 'Sections', 'action' => 'view', $slider->section->id]) : '' ?></td>
-                    
                     <td class="actions">
                         <a href="<?= $this->Url->Build([ 'action' => 'view', $slider->id]) ?>" class="btn btn-sm btn-sm1 btn-primary">
                             <i class="fas fa-eye"></i>

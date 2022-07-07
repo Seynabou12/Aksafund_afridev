@@ -21,6 +21,7 @@ $this->assign('title', 'Ajout - Nouveau Type');
         <?php
             echo $this->Form->control('name');
             echo $this->Form->control('texte');
+            echo $this->Form->control('couleur');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

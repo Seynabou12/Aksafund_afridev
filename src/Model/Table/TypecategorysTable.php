@@ -54,8 +54,13 @@ class TypecategorysTable extends Table
 
         $validator
             ->scalar('texte')
-            ->maxLength('texte', 200)
+            ->maxLength('texte', 255)
             ->allowEmptyString('texte');
+
+        $validator
+            ->scalar('couleur')
+            ->maxLength('couleur', 100)
+            ->allowEmptyString('couleur');
 
         return $validator;
     }

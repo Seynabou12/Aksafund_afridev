@@ -40,33 +40,35 @@ $cakeDescription = 'Aksafund: plateforme de collecte de fonds';
                     <div class="col-md-12" style=";background-size:cover;;background-position:center center;height: 500px;background-image: url('<?= $this->Url->Image($key->images) ?>')">
                         <div class="title-slider d-flex align-items-start flex-column bd-highlight mb-3" style="height: 200px;">
                             <div class="ml-2 bd-highlight mt-4">
-                            <h1 class="h1 text-white pt-4 gros-titre"><?= $key->titre ?></h1>
+                                <h1 class="h1 text-white pt-4 gros-titre"><?= $key->titre ?></h1>
                             </div>
+                            <br/>
+                            <div class="p-2 bd-highlight text-white" style="width: 600px;"> <?= $key->description ?></div>
                             <div class="p-2 mt-4 bd-highlight bg-orange text-white ml-2">
-                            <div class="soustitre font-weight-bold">POUR UNE CAUSE OU UN PROJET</div>
+                                <div class="soustitre font-weight-bold">POUR UNE CAUSE OU UN PROJET</div>
                             </div>
-                            <div class="p-2 bd-highlight text-white"> <?= $key->description ?></div>
                         </div>
                     </div>
                 <?php } ?>
             </div>
-            
         </div>
     </div>
-    <div class="row section1 m-2">
-    <?php foreach($types as $type) {?>
-        
-        <div class="col-md-4 ml-auto mr-0 section1_block projets text-left">
+    <div class="row section1 m-2"  style="justify-content:center; margin: 20px;">
+    <?php foreach($types as $key) {?>
+            <?= $key->couleur ?>
+        <div class="col-md-4 mr-0 section1_block projets">
             <div class="">
-
-                <div class="section1_block_titre"><?= $type->name ?></div>
-                <div class="section1_block_description">
-                <?= $type->texte ?>
+                <div class="section1_block_titre" ><?= $key->name ?></div>
+                    <div class="section1_block_description">
+                        <?php $key->texte ?>
+                    Il y a beaucoup d'idées, de projets qui méritent une collecte de fonds. 
+                    Ceux qui les partagent croient en votre soutien, vos bonnes actions. 
+                    Vous pouvez les aider en contribuant à leur développpement.
                 </div>
             </div>
         </div>
+       
     <?php }?>
-            
     </div>
     
     <!-- <div class="row header_slider">

@@ -16,6 +16,7 @@ namespace App\Controller\Admin;
 
 use App\Controller\AppController as app;
 use Cake\Event\Event;
+
 /**
  * Application Controller
  *
@@ -46,7 +47,7 @@ class AppController extends app
          */
         //$this->loadComponent('Security');
     }
-    public function beforeFilter($event)
+    public function beforeFilter(Event $event)
     {
         $static = new StaticsController();
         $this->loadModel('Users');

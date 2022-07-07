@@ -83,7 +83,7 @@ class StaticsController extends AppController
                     "name" => "Les Types Catégories",
                     "fa" => "fa-industry",
                     "header" => "Gestion des types",
-                    "refs" => ['secteur'],
+                    "refs" => ['typecategorys'],
                     "items" => [
                         [
                             "name" => "Les Types",
@@ -98,55 +98,6 @@ class StaticsController extends AppController
                     ]
 
                 ],
-            
-                /*[
-                    "name" => "Les entreprises",
-                    "fa" => "fa-building",
-                    "header" => "Gestion des entreprises",
-                    "refs" => ['entreprise','evaluation'],
-                    "items" => [
-                        [
-                            "name" => "Les évaluations",
-                            "controller" => "Evaluation",
-                            "action" => "index"
-                        ],
-                        [
-                            "name" => "Les entreprises",
-                            "controller" => "Entreprise",
-                            "action" => "index"
-                        ],
-                        [
-                            "name" => "Les nomminés",
-                            "controller" => "Nommines",
-                            "action" => "index"
-                        ],
-                        [
-                            "name" => "Ajouter entreprise",
-                            "controller" => "Entreprise",
-                            "action" => "add"
-                        ]
-                    ]
-
-                ],-*/
-                // [
-                //     "name" => "Les participants",
-                //     "fa" => "fa-user-tie",
-                //     "header" => "Gestion des particpants",
-                //     "refs" => ['Participants'],
-                //     "items" => [
-                //         [
-                //             "name" => "Les participants",
-                //             "controller" => "Participants",
-                //             "action" => "index"
-                //         ],
-                //         [
-                //             "name" => "Ajouter participant",
-                //             "controller" => "Participants",
-                //             "action" => "add"
-                //         ]
-                //     ]
-
-                // ],
                 [
                     "name" => "Les utilisateurs",
                     "fa" => "fa-users",

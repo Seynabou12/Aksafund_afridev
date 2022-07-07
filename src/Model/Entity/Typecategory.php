@@ -9,6 +9,7 @@ use Cake\ORM\Entity;
  * @property int $id
  * @property string|null $name
  * @property string $texte
+ * @property string $couleur
  */
 class Typecategory extends Entity
 {
@@ -24,5 +25,6 @@ class Typecategory extends Entity
     protected $_accessible = [
         'name' => true,
         'texte' => true,
+        'couleur'=>true,
     ];
 }

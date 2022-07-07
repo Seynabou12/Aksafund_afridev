@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\ORM\TableRegistry;
 use Exception;
 use PayExpress;
 use \Mailjet\Resources;
@@ -123,8 +124,11 @@ class CampagnesController extends AppController
 
         $types = $this->Typecategorys->find('all',['conditions'=>['id'=>$id]]);
         $type = $types->first()->name;
+
         $causes = $campagnes->toArray();
+        
         $this->set(compact('causes','type'));
+      
     }
 
     public function listContributions($id_campagne){

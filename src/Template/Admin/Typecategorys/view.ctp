@@ -24,6 +24,7 @@
             <th scope="row"><?= __('Texte') ?></th>
             <td><?= h($typecategory->texte) ?></td>
         </tr>
+       
         <tr>
             <th scope="row"><?= __('Id') ?></th>
             <td><?= $this->Number->format($typecategory->id) ?></td>

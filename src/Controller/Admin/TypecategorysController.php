@@ -20,10 +20,8 @@ class TypecategorysController extends AppController
     public function index()
     {
         $typecategorys = $this->paginate($this->Typecategorys);
-
         $this->set(compact('typecategorys'));
     }
-
     /**
      * View method
      *
@@ -39,7 +37,6 @@ class TypecategorysController extends AppController
 
         $this->set('typecategory', $typecategory);
     }
-
     /**
      * Add method
      *
@@ -59,7 +56,6 @@ class TypecategorysController extends AppController
         }
         $this->set(compact('typecategory'));
     }
-
     /**
      * Edit method
      *
@@ -81,7 +77,6 @@ class TypecategorysController extends AppController
         }
         $this->set(compact('typecategory'));
     }
-
     /**
      * Delete method
      *
@@ -98,7 +93,6 @@ class TypecategorysController extends AppController
         } else {
             $this->Flash->error(__('The typecategory could not be deleted. Please, try again.'));
         }
-
         return $this->redirect(['action' => 'index']);
     }
 }

@@ -23,7 +23,7 @@
                 <span>
                     <span>Localisation</span> <i class="fas fa-enveloppe" aria-hidden="true"></i>
                     <a href='mailto:contact@aksafund.com' style="color: #6c757d !important;"> <?= $parametre->email ?> </a>
-                    </span>
+                </span>
             </div>
         </div>
     </div>

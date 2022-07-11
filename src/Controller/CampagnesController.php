@@ -99,6 +99,7 @@ class CampagnesController extends AppController
      */
     public function campagne($id = null)
     {
+        
         $campagne = $this->Campagnes->get($id, [
             'contain' => ['Categorys', 'Users', 'Fichiers', 'Participations' => function ($query) {
                 return $query->select(['Participations.campagne_id','somme' => $query->func()->sum('Participations.montant')])
@@ -109,10 +110,21 @@ class CampagnesController extends AppController
         $title= $campagne->toArray();
         $titre = $title['name'];
         $participations= $campagne->participations;
-        $this->set(compact('campagne','participations','titre'));
+
+        $parametres = TableRegistry::get('Parametres');
+        $query = $parametres->find('all', [
+        ]);
+        $parametre = $query->first();
+
+        $reseaux = TableRegistry::get('Reseaux');
+        $query = $reseaux->find('all', []);
+        $reseau = $query->toArray();
+
+        $this->set(compact('campagne','participations','titre','parametre', 'reseau'));
     }
 
     public function categorie($id = null)
+    
     {
         $this->loadModel('Typecategorys');
         $campagnes = $this->Campagnes->find('all',[
@@ -124,11 +136,9 @@ class CampagnesController extends AppController
 
         $types = $this->Typecategorys->find('all',['conditions'=>['id'=>$id]]);
         $type = $types->first()->name;
-
         $causes = $campagnes->toArray();
-        
+
         $this->set(compact('causes','type'));
-      
     }
 
     public function listContributions($id_campagne){
@@ -150,8 +160,17 @@ class CampagnesController extends AppController
         ]);
 
         $contributions= $campagne->participations;
+
+        $parametres = TableRegistry::get('Parametres');
+        $query = $parametres->find('all', [
+        ]);
+        $parametre = $query->first();
+
+        $reseaux = TableRegistry::get('Reseaux');
+        $query = $reseaux->find('all', []);
+        $reseau = $query->toArray();
 	//dd($contributions);
-        $this->set(compact('campagne','contributions'));
+        $this->set(compact('campagne','contributions', 'parametre', 'reseau'));
     }
 
     public function contribution($id = null)
@@ -168,7 +187,15 @@ class CampagnesController extends AppController
             // $this->saveDonation($campagne->name);
         }
         $participations= $campagne->participations;
-        $this->set(compact('campagne','participations'));
+        $parametres = TableRegistry::get('Parametres');
+        $query = $parametres->find('all', [
+        ]);
+        $parametre = $query->first();
+
+        $reseaux = TableRegistry::get('Reseaux');
+        $query = $reseaux->find('all', []);
+        $reseau = $query->toArray();
+        $this->set(compact('campagne','participations','parametre', 'reseau'));
     }
 
     // Enregritrement de la contribution

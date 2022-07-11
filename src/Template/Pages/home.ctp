@@ -53,22 +53,20 @@ $cakeDescription = 'Aksafund: plateforme de collecte de fonds';
             </div>
         </div>
     </div>
+    
     <div class="row section1 m-2"  style="justify-content:center; margin: 20px;">
+
     <?php foreach($types as $key) {?>
-            <?= $key->couleur ?>
-        <div class="col-md-4 mr-0 section1_block projets">
+        <div class="col-md-4 mr-0 section1_block projets" style="background-color:<?= $key->couleur ?>">
             <div class="">
                 <div class="section1_block_titre" ><?= $key->name ?></div>
                     <div class="section1_block_description">
-                        <?php $key->texte ?>
-                    Il y a beaucoup d'idées, de projets qui méritent une collecte de fonds. 
-                    Ceux qui les partagent croient en votre soutien, vos bonnes actions. 
-                    Vous pouvez les aider en contribuant à leur développpement.
+                        <?= $key->texte ?>
                 </div>
             </div>
         </div>
-       
     <?php }?>
+   
     </div>
     
     <!-- <div class="row header_slider">

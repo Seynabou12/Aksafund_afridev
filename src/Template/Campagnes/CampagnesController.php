@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Exception;
 use PayExpress;
 
 \Paydunya\Setup::setMasterKey("PNvCRoX6-xbSm-0Gtt-TOxq-jN9mbhgKbfU3");
@@ -78,7 +79,14 @@ class CampagnesController extends AppController
         $types = $this->Typecategorys->find('all',['conditions'=>['id'=>$id]]);
         $type = $types->first()->name;
         $causes = $campagnes->toArray();
-        $this->set(compact('causes','type'));
+
+        $parametre = $this->Parametres->find('all',[]);
+        $type = $parametre->first();
+
+        dd($parametre);
+
+        $this->set(compact('causes','type','parametre'));
+    
     }
     
     public function listContributions($id_campagne){

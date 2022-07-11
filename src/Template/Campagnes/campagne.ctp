@@ -59,10 +59,7 @@ $this->assign('title', $titre);
                 <button class="buy btn btn-orange" onclick="buy(this)" data-item-id="88" >
                     Faire un don
                 </button>
-                <!--<div class="col-md-12 text-white text-center">
-                <span class="f12">ou appeler le </span>  <br>
-                <span class="font-weight-bold">77 462 33 52</span>
-                </div>-->
+               
             </div>
         </div>
     </div>
@@ -99,11 +96,6 @@ $this->assign('title', $titre);
             <?php } ?>
         </div>
     </div>
-
-
-
-
-
 
 </div>
 <script>

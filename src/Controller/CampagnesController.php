@@ -169,7 +169,7 @@ class CampagnesController extends AppController
         $reseaux = TableRegistry::get('Reseaux');
         $query = $reseaux->find('all', []);
         $reseau = $query->toArray();
-	//dd($contributions);
+	    //dd($contributions);
         $this->set(compact('campagne','contributions', 'parametre', 'reseau'));
     }
 
@@ -197,7 +197,6 @@ class CampagnesController extends AppController
         $reseau = $query->toArray();
         $this->set(compact('campagne','participations','parametre', 'reseau'));
     }
-
     // Enregritrement de la contribution
     public function saveDonation($campagne){
         $this->loadModel('Participations');
@@ -211,7 +210,6 @@ class CampagnesController extends AppController
                 $this->Participations->save($participation);
                 return $this->redirect($reponse['redirect_url']);
             }
-
         }
         $this->Flash->error(__("Une erreur est survenue lors de l'enregistrement de la contribution. Merci de réessayer."));
     }
@@ -300,10 +298,7 @@ class CampagnesController extends AppController
         if($this->request->is('post')){
 
             // * Initialisation d'un Paiement Avec Redirection (PAR)
-            // n
-            // dd($invoice);
-            //  Configuration de l'URL de notification instantanée de paiement sur une instance de facture
-            // Cette configuration écrasera les paramètres globaux précédants si ceux-ci ont déjà été définis.
+          
             $invoice = new \Paydunya\Checkout\CheckoutInvoice();
 
             $invoice->addItem("Essai sur le paiment",
@@ -317,9 +312,7 @@ class CampagnesController extends AppController
 
             //A insérer dans le fichier du code source qui doit effectuer l'action
 
-            // Le code suivant décrit comment créer une facture de paiement au niveau de nos serveurs,
-            // rediriger ensuite le client vers la page de paiement
-            // et afficher ensuite son reçu de paiement en cas de succès.
+            
             $this->loadModel('Participations');
             $participation = $this->Participations->newEntity();
             $participation = $this->Participations->patchEntity($participation, $this->request->getData());

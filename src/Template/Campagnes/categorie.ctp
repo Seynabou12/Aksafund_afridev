@@ -1,4 +1,4 @@
-<?= $this->assign('title', $type); ?>
+<!-- <?= $this->assign('title', $type); ?> -->
 
 <section style="display:none">
     <div class="row">

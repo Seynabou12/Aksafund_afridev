@@ -137,8 +137,16 @@ class CampagnesController extends AppController
         $types = $this->Typecategorys->find('all',['conditions'=>['id'=>$id]]);
         $type = $types->first()->name;
         $causes = $campagnes->toArray();
+        $parametres = TableRegistry::get('Parametres');
+        $query = $parametres->find('all', [
+        ]);
+        $parametre = $query->first();
 
-        $this->set(compact('causes','type'));
+        $reseaux = TableRegistry::get('Reseaux');
+        $query = $reseaux->find('all', []);
+        $reseau = $query->toArray();
+
+        $this->set(compact('causes','type', 'parametre', 'reseau'));
     }
 
     public function listContributions($id_campagne){

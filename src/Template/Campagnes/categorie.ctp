@@ -22,15 +22,7 @@
                     </div>
                 <?php } ?>
             </div>
-            <!-- <div class="d-flex align-items-start flex-column bd-highlight mb-3 pt-4 ml-4" style="height: 200px;">
-                <div class="mt-5 mb-4 p-2 pt-4 bd-highlight">
-                <h1 class="h1 text-white pt-4 gros-titre">FAITES UN DON</h1>
-                </div>
-                <div class="p-2 bd-highlight bg-orange text-white ml-2">
-                <h3 class="h5">POUR UNE CAUSE OU UN PROJET</h3> 
-                </div>
-                <div class="p-2 bd-highlight text-white">Pariciper à une cause noble pour aider !</div>
-            </div> -->
+           
         </div>
     </div>
    
